@@ -1,11 +1,13 @@
 package edu.gatech.oad.antlab.person;
+import java.util.HashMap;
+import java.util.Random;
 
 /**
  *  A simple class for person 2
  *  returns their name and a
- *  modified string 
+ *  modified string
  *
- * @author Bob
+ * @author Marcus Jones
  * @version 1.1
  */
 public class Person2 {
@@ -30,15 +32,31 @@ public class Person2 {
 	 * @return the modified string
 	 */
 	private String calc(String input) {
-	  //Person 2 put your implementation here
-	  return null;
+  int len = input.length();
+      HashMap map = new HashMap<Integer, Boolean>();
+      boolean notDone = true;
+      int counter = 0;
+      Random rand = new Random();
+      String result = "";
+      for (int i = 0; i < len; i++) {
+          map.put(i, false);
+      }
+      while (counter <  len) {
+          int check = rand.nextInt(len);
+          if ((Boolean) map.get(check) == false) {
+              map.put(check, true);
+              counter++;
+              result += input.charAt(check);
+          }
+      }
+      return result;
 	}
 	/**
 	 * Return a string rep of this object
 	 * that varies with an input string
 	 *
 	 * @param input the varying string
-	 * @return the string representing the 
+	 * @return the string representing the
 	 *         object
 	 */
 	public String toString(String input) {
