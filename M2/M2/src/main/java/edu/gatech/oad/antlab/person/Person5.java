@@ -47,8 +47,8 @@ package edu.gatech.oad.antlab.person;
   	 * @return the string representing the
   	 *         object
   	 */
-  	public String toString(String input) {
-  	  return name + calc(input);
-  	}
+    public String toString(String input) {
+        return name + calc(input);
+    }
 
 }
