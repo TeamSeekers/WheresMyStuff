@@ -61,7 +61,7 @@ import edu.gatech.oad.antlab.pkg2.*;
 		  toPrint += p1.toString("gburdell1");
 		  //Person2 replace P2 with your name
 		  //and gburdell with your gt id
-		  Person2 p2 = new Person2("P2");
+		  Person2 p2 = new Person2("Marcus Jones");
 		  toPrint += p2.toString("mjones374");
 		  //Person3 replace P3 with your name
 		  //and gburdell3 with your gt id
