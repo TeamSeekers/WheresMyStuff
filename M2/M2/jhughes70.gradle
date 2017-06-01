@@ -8,7 +8,7 @@ sourceCompatibility = 1.8
 
 jar {
     manifest {
-         attributes 'Implementation-Title':'Name',
+         attributes 'Implementation-Title':'M2',
          			'Implementation-Version':'1.0',
          			'Main-Class':'edu.gatech.oad.antlab.pkg1.AntLabMain',
          			'Class-Path': '../../lib/resources.jar'
