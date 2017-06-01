@@ -1,0 +1,18 @@
+apply plugin: 'java'
+
+jar {
+    manifest {
+        attributes 'Implementation-Title': 'M2',
+        'Implementation-Version': '1.0',
+        'Main-Class': 'edu.gatech.oad.antlab.pkg1.AntLabMain',
+        'Class-Path': '../../lib/resources.jar'
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile files ('lib/resources.jar')
+}
