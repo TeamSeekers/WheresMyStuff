@@ -55,7 +55,6 @@ public class LoginScreenActivity extends AppCompatActivity {
                 String pass = password.getText().toString();
 
                 if (WelcomeScreenActivity.personList.getPersonList().get(user) == null) {
-                    Log.d("person list", WelcomeScreenActivity.personList.getPersonList().toString());
                     AlertDialog.Builder builder1 = new AlertDialog.Builder(LoginScreenActivity.this);
                     builder1.setMessage("Username not found in database");
                     builder1.setCancelable(true);

@@ -78,12 +78,13 @@
         android:id="@+id/banUserButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Ban"
-        tools:layout_constraintTop_creator="1"
         android:layout_marginTop="25dp"
+        android:onClick="onBanClicked"
+        android:text="Ban"
+        app:layout_constraintLeft_toLeftOf="@+id/banUserText"
         app:layout_constraintTop_toBottomOf="@+id/banUserText"
         tools:layout_constraintLeft_creator="1"
-        app:layout_constraintLeft_toLeftOf="@+id/banUserText" />
+        tools:layout_constraintTop_creator="1" />
 
     <Button
         android:id="@+id/unbanUserButton"
