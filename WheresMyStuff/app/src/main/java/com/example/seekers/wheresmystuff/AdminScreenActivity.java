@@ -1,5 +1,6 @@
 package com.example.seekers.wheresmystuff;
 
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -17,8 +18,7 @@ public class AdminScreenActivity extends AppCompatActivity {
     private EditText unbanUser;
     private Button banUserButton;
     private Button unbanUserButton;
-    private String banUsername;
-    private String unbanUsername;
+    private Button logout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,14 +29,21 @@ public class AdminScreenActivity extends AppCompatActivity {
         unbanUser = (EditText) findViewById(R.id.unbanUserText);
         banUserButton = (Button) findViewById(R.id.banUserButton);
         unbanUserButton = (Button) findViewById(R.id.unbanUserButton);
-
-        banUsername = banUser.getText().toString();
-        unbanUsername = unbanUser.getText().toString();
+        logout = (Button) findViewById(R.id.adminLogout);
 
         banUserButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (!WelcomeScreenActivity.personList.getPersonList().get(banUsername).isBanned()
+
+                String banUsername = banUser.getText().toString();
+
+                if (WelcomeScreenActivity.personList.getPersonList().get(banUsername) == null) {
+                    AlertDialog.Builder builder1 = new AlertDialog.Builder(AdminScreenActivity.this);
+                    builder1.setMessage("Username not found in database");
+                    builder1.setCancelable(true);
+                    AlertDialog alert11 = builder1.create();
+                    alert11.show();
+                } else if (!WelcomeScreenActivity.personList.getPersonList().get(banUsername).isBanned()
                         && WelcomeScreenActivity.personList.getPersonList().get(banUsername) != null) {
                     WelcomeScreenActivity.personList.getPersonList().get(banUsername).setBanned(true);
                     User n = (User) WelcomeScreenActivity.personList.getPersonList().get(banUsername);
@@ -48,12 +55,28 @@ public class AdminScreenActivity extends AppCompatActivity {
         unbanUserButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (WelcomeScreenActivity.personList.getPersonList().get(unbanUsername).isBanned()
-                        && WelcomeScreenActivity.personList.getPersonList().get(banUsername) != null) {
+
+                String unbanUsername = unbanUser.getText().toString();
+
+                if (WelcomeScreenActivity.personList.getPersonList().get(unbanUsername) == null) {
+                    AlertDialog.Builder builder1 = new AlertDialog.Builder(AdminScreenActivity.this);
+                    builder1.setMessage("Username not found in database");
+                    builder1.setCancelable(true);
+                    AlertDialog alert11 = builder1.create();
+                    alert11.show();
+                } else if (WelcomeScreenActivity.personList.getPersonList().get(unbanUsername).isBanned()
+                        && WelcomeScreenActivity.personList.getPersonList().get(unbanUsername) != null) {
                     WelcomeScreenActivity.personList.getPersonList().get(unbanUsername).setBanned(false);
                     User n = (User) WelcomeScreenActivity.personList.getPersonList().get(unbanUsername);
                     WelcomeScreenActivity.myRef.child("Users").child(n.getUsername()).setValue(n);
                 }
+            }
+        });
+
+        logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
             }
         });
     }
