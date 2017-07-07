@@ -39,20 +39,12 @@ public class Admin extends Person {
         return false;
     }
 
-    /**
-     * Set user to banned
-     * @param u User to ban
-     */
-    public void setUserBanned(User u) {
-        u.setBanned(true);
-    }
 
     /**
-     * Set user to unbanned
-     * @param u User to unban
+     * holder method
+     * @param b true for banned, false for unbanned
      */
-    public void setUserUnbanned(User u) {
-        u.setBanned(false);
+    public void setBanned(boolean b) {
     }
 
     /**

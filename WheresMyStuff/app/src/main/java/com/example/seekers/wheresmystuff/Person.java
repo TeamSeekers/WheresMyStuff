@@ -20,6 +20,12 @@ public abstract class Person {
     public abstract boolean isBanned();
 
     /**
+     * Set account to banned or unbanned
+     * @param b true for banned, false for unbanned
+     */
+    public abstract void setBanned(boolean b);
+
+    /**
      * getter method for the username
      * @return the username of the person
      */

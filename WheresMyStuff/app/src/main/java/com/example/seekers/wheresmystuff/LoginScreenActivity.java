@@ -67,28 +67,36 @@ public class LoginScreenActivity extends AppCompatActivity {
                     builder1.setCancelable(true);
                     AlertDialog alert11 = builder1.create();
                     alert11.show();
-                } else if (!WelcomeScreenActivity.personList.getPersonList().get(user).isBanned() &&
-                        WelcomeScreenActivity.personList.getPersonList().get(user).getPassword().equals(pass)) {
-                    Intent intent = new Intent(LoginScreenActivity.this, HomeScreenActivity.class);
-                    startActivity(intent);
-                    WelcomeScreenActivity.personList.getPersonList().get(user).resetIncorrect();
-                    if (WelcomeScreenActivity.personList.getPersonList().get(user).getAccountType().equals("User")) {
-                        User n = (User) WelcomeScreenActivity.personList.getPersonList().get(user);
-                        WelcomeScreenActivity.myRef.child("Users").child(n.getUsername()).setValue(n);
-                    } else {
-                        Admin a = (Admin) WelcomeScreenActivity.personList.getPersonList().get(user);
-                        WelcomeScreenActivity.myRef.child("Admins").child(a.getUsername()).setValue(a);
+                } else if (WelcomeScreenActivity.personList.getPersonList().get(user).getIncorrect() < 3) {
+                    if (!WelcomeScreenActivity.personList.getPersonList().get(user).isBanned() &&
+                            WelcomeScreenActivity.personList.getPersonList().get(user).getPassword().equals(pass)) {
+                        if (WelcomeScreenActivity.personList.getPersonList().get(user).getAccountType().equals("User")) {
+                            Intent intent = new Intent(LoginScreenActivity.this, HomeScreenActivity.class);
+                            startActivity(intent);
+                        } else {
+                            Intent intent = new Intent(LoginScreenActivity.this, AdminScreenActivity.class);
+                            startActivity(intent);
+                        }
+                        WelcomeScreenActivity.personList.getPersonList().get(user).resetIncorrect();
+                        if (WelcomeScreenActivity.personList.getPersonList().get(user).getAccountType().equals("User")) {
+                            User n = (User) WelcomeScreenActivity.personList.getPersonList().get(user);
+                            WelcomeScreenActivity.myRef.child("Users").child(n.getUsername()).setValue(n);
+                        } else {
+                            Admin a = (Admin) WelcomeScreenActivity.personList.getPersonList().get(user);
+                            WelcomeScreenActivity.myRef.child("Admins").child(a.getUsername()).setValue(a);
+                        }
+                        login = true;
+                        finish();
                     }
-                    login = true;
-                    finish();
                 }
                 if (!login && WelcomeScreenActivity.personList.getPersonList().get(user) != null
                         && !WelcomeScreenActivity.personList.getPersonList().get(user).isBanned()) {
-                        WelcomeScreenActivity.personList.getPersonList().get(user).addIncorrect();
                         int value = WelcomeScreenActivity.personList.getPersonList().get(user).getIncorrect();
-                        if (value <= 3) {
+                        if (value < 3) {
+                            WelcomeScreenActivity.personList.getPersonList().get(user).addIncorrect();
+                            int newValue = WelcomeScreenActivity.personList.getPersonList().get(user).getIncorrect();
                             AlertDialog.Builder builder1 = new AlertDialog.Builder(LoginScreenActivity.this);
-                            builder1.setMessage("Incorrect username or password, number of attempts remaining: " + (3 - value));
+                            builder1.setMessage("Incorrect password, number of attempts remaining: " + (3 - newValue));
                             builder1.setCancelable(true);
                             AlertDialog alert11 = builder1.create();
                             alert11.show();
