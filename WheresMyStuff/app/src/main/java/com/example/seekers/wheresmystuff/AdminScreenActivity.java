@@ -48,6 +48,11 @@ public class AdminScreenActivity extends AppCompatActivity {
                     WelcomeScreenActivity.personList.getPersonList().get(banUsername).setBanned(true);
                     User n = (User) WelcomeScreenActivity.personList.getPersonList().get(banUsername);
                     WelcomeScreenActivity.myRef.child("Users").child(n.getUsername()).setValue(n);
+                    AlertDialog.Builder builder1 = new AlertDialog.Builder(AdminScreenActivity.this);
+                    builder1.setMessage("User successfully banned");
+                    builder1.setCancelable(true);
+                    AlertDialog alert11 = builder1.create();
+                    alert11.show();
                 }
             }
         });
@@ -69,6 +74,11 @@ public class AdminScreenActivity extends AppCompatActivity {
                     WelcomeScreenActivity.personList.getPersonList().get(unbanUsername).setBanned(false);
                     User n = (User) WelcomeScreenActivity.personList.getPersonList().get(unbanUsername);
                     WelcomeScreenActivity.myRef.child("Users").child(n.getUsername()).setValue(n);
+                    AlertDialog.Builder builder1 = new AlertDialog.Builder(AdminScreenActivity.this);
+                    builder1.setMessage("User successfully unbanned");
+                    builder1.setCancelable(true);
+                    AlertDialog alert11 = builder1.create();
+                    alert11.show();
                 }
             }
         });
