@@ -36,6 +36,7 @@ public class RegistrationScreenActivity extends AppCompatActivity {
     private RadioButton userAccountType;
     private RadioButton adminAccountType;
     private Button cancel;
+    private EditText enterCode;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +50,7 @@ public class RegistrationScreenActivity extends AppCompatActivity {
         userAccountType = (RadioButton) findViewById(R.id.userAccountType);
         adminAccountType = (RadioButton) findViewById(R.id.adminAccountType);
         cancel = (Button) findViewById(R.id.registrationCancel);
+        enterCode = (EditText) findViewById(R.id.adminCodeInput);
 
         registrationEnter.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -56,6 +58,7 @@ public class RegistrationScreenActivity extends AppCompatActivity {
                 String account;
                 String newUserName = enterUsername.getText().toString();
                 String newPassword = enterPassword.getText().toString();
+                String code = enterCode.getText().toString();
 
                 if (userAccountType.isChecked()) {
                     account = "User";
@@ -66,13 +69,21 @@ public class RegistrationScreenActivity extends AppCompatActivity {
                     showAlert();
                     finish();
                 } else {
-                    account = "Admin";
-                    Admin newAdmin = new Admin(enterName.getText().toString(),
-                            newUserName, newPassword, account);
-                    WelcomeScreenActivity.myRef.child("Admins").child(newUserName).setValue(newAdmin);
-                    WelcomeScreenActivity.personList.getPersonList().put(newAdmin.getUsername(), newAdmin);
-                    showAlert();
-                    finish();
+                    if (code.equals("cs2340")) {
+                        account = "Admin";
+                        Admin newAdmin = new Admin(enterName.getText().toString(),
+                                newUserName, newPassword, account);
+                        WelcomeScreenActivity.myRef.child("Admins").child(newUserName).setValue(newAdmin);
+                        WelcomeScreenActivity.personList.getPersonList().put(newAdmin.getUsername(), newAdmin);
+                        showAlert();
+                        finish();
+                    } else {
+                        AlertDialog.Builder builder1 = new AlertDialog.Builder(RegistrationScreenActivity.this);
+                        builder1.setMessage("Incorrect code entered.");
+                        builder1.setCancelable(true);
+                        AlertDialog alert11 = builder1.create();
+                        alert11.show();
+                    }
                 }
             }
         });
