@@ -36,14 +36,13 @@ public class LostItemsListActivity extends AppCompatActivity {
         WelcomeScreenActivity.myRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
+                WelcomeScreenActivity.lostItemList.getLostItemList().clear();
                 DataSnapshot lostItems = dataSnapshot.child("LostItems");
                 Iterable<DataSnapshot> lostChildren = lostItems.getChildren();
                 for (DataSnapshot lost: lostChildren) {
                     LostItem l = lost.getValue(LostItem.class);
                     if (l != null) {
-                        if (!WelcomeScreenActivity.lostItemList.getLostItemList().contains(l)) {
-                            WelcomeScreenActivity.lostItemList.getLostItemList().add(l);
-                        }
+                        WelcomeScreenActivity.lostItemList.getLostItemList().add(l);
                     }
                 }
             }

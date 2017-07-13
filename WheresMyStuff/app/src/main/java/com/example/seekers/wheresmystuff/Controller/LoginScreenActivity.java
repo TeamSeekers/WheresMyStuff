@@ -45,14 +45,13 @@ public class LoginScreenActivity extends AppCompatActivity {
         WelcomeScreenActivity.myRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
+                WelcomeScreenActivity.personList.getPersonList().clear();
                 DataSnapshot admins = dataSnapshot.child("Admins");
                 Iterable<DataSnapshot> adminsChildren = admins.getChildren();
                 for (DataSnapshot admin: adminsChildren) {
                     Admin a = admin.getValue(Admin.class);
                     if (a != null) {
-                        if (!WelcomeScreenActivity.personList.getPersonList().containsValue(a)) {
-                            WelcomeScreenActivity.personList.getPersonList().put(a.getUsername(), a);
-                        }
+                        WelcomeScreenActivity.personList.getPersonList().put(a.getUsername(), a);
                     }
                 }
                 DataSnapshot users = dataSnapshot.child("Users");
@@ -60,9 +59,8 @@ public class LoginScreenActivity extends AppCompatActivity {
                 for (DataSnapshot user: usersChildren) {
                     User u = user.getValue(User.class);
                     if (u != null) {
-                        if (!WelcomeScreenActivity.personList.getPersonList().containsValue(u)) {
-                            WelcomeScreenActivity.personList.getPersonList().put(u.getUsername(), u);
-                        }
+                        WelcomeScreenActivity.personList.getPersonList().put(u.getUsername(), u);
+
                     }
                 }
             }

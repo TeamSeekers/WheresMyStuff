@@ -39,14 +39,14 @@ public class FoundItemsListActivity extends AppCompatActivity {
         WelcomeScreenActivity.myRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
+                WelcomeScreenActivity.foundItemList.getFoundItemList().clear();
                 DataSnapshot foundItems = dataSnapshot.child("FoundItems");
                 Iterable<DataSnapshot> foundChildren = foundItems.getChildren();
                 for (DataSnapshot found: foundChildren) {
                     FoundItem f = found.getValue(FoundItem.class);
                     if (f != null) {
-                        if (!WelcomeScreenActivity.foundItemList.getFoundItemList().contains(f)) {
-                            WelcomeScreenActivity.foundItemList.getFoundItemList().add(f);
-                        }
+                        WelcomeScreenActivity.foundItemList.getFoundItemList().add(f);
+
                     }
                 }
             }
