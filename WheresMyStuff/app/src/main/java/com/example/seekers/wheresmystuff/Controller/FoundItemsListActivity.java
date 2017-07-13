@@ -8,8 +8,6 @@ import android.widget.Button;
 import android.widget.ListView;
 import com.example.seekers.wheresmystuff.R;
 
-import com.example.seekers.wheresmystuff.R;
-
 /**
  * The controller class that represents when someone needs to view a list
  * of found items.
