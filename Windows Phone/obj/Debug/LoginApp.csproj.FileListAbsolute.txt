@@ -1,0 +1,16 @@
+D:\Subbu\MyAtrilce's-WindowsPhone\LoginApp\LoginApp\Bin\Debug\ApplicationIcon.png
+D:\Subbu\MyAtrilce's-WindowsPhone\LoginApp\LoginApp\Bin\Debug\Background.png
+D:\Subbu\MyAtrilce's-WindowsPhone\LoginApp\LoginApp\Bin\Debug\LoginApp.dll
+D:\Subbu\MyAtrilce's-WindowsPhone\LoginApp\LoginApp\Bin\Debug\LoginApp.pdb
+D:\Subbu\MyAtrilce's-WindowsPhone\LoginApp\LoginApp\Bin\Debug\AppManifest.xaml
+D:\Subbu\MyAtrilce's-WindowsPhone\LoginApp\LoginApp\Bin\Debug\LoginApp.xap
+D:\Subbu\MyAtrilce's-WindowsPhone\LoginApp\LoginApp\obj\Debug\App.g.cs
+D:\Subbu\MyAtrilce's-WindowsPhone\LoginApp\LoginApp\obj\Debug\LoginApp.g.resources
+D:\Subbu\MyAtrilce's-WindowsPhone\LoginApp\LoginApp\obj\Debug\LoginApp.dll
+D:\Subbu\MyAtrilce's-WindowsPhone\LoginApp\LoginApp\obj\Debug\LoginApp.pdb
+D:\Subbu\MyAtrilce's-WindowsPhone\LoginApp\LoginApp\obj\Debug\XapCacheFile.xml
+D:\Subbu\MyAtrilce's-WindowsPhone\LoginApp\LoginApp\obj\Debug\Views\LinkInfo.g.cs
+D:\Subbu\MyAtrilce's-WindowsPhone\LoginApp\LoginApp\obj\Debug\Views\LoginPage.g.cs
+D:\Subbu\MyAtrilce's-WindowsPhone\LoginApp\LoginApp\obj\Debug\Views\SignUpPage.g.cs
+D:\Subbu\MyAtrilce's-WindowsPhone\LoginApp\LoginApp\obj\Debug\Views\UserDetails.g.cs
+D:\Subbu\MyAtrilce's-WindowsPhone\LoginApp\LoginApp\obj\Debug\LoginApp.csprojResolveAssemblyReference.cache
