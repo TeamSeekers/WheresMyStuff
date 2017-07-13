@@ -50,7 +50,7 @@ public class RegistrationScreenActivity extends AppCompatActivity {
                 String newPassword = enterPassword.getText().toString();
                 String code = enterCode.getText().toString();
 
-                if (WelcomeScreenActivity.personList.getPersonList().containsValue(newUserName)) {
+                if (WelcomeScreenActivity.personList.getPersonList().containsKey(newUserName)) {
                     AlertDialog.Builder builder1 = new AlertDialog.Builder(RegistrationScreenActivity.this);
                     builder1.setMessage("Username already taken.");
                     builder1.setCancelable(true);
