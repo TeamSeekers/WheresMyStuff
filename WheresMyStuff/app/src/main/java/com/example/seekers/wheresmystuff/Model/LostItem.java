@@ -1,29 +1,26 @@
-package com.example.seekers.wheresmystuff;
+package com.example.seekers.wheresmystuff.Model;
 
 /**
- * Created by pritshah on 6/24/17.
+ * Created by pritshah on 6/22/17.
  */
 
-/**
- * A class that represents an item that has been found.
- */
-public class FoundItem extends Item {
+public class LostItem extends Item {
     private String name;
     private String color;
     private String description;
     private String address;
 
-    public FoundItem() {
+    public LostItem() {
 
     }
 
     /**
-     * Constructer for FoundItem
-     * @param name the name of the FoundItem
-     * @param color the color of the foundItem
-     * @param description the description of the FoundItem
+     * Constructer for LostItem
+     * @param name the name of the LostItem
+     * @param color the color of the lostItem
+     * @param description the description of the LostItem
      */
-    public FoundItem(String name, String color, String description, String address) {
+    public LostItem(String name, String color, String description, String address) {
         this.name = name;
         this.color = color;
         this.description = description;

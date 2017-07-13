@@ -1,4 +1,4 @@
-package com.example.seekers.wheresmystuff;
+package com.example.seekers.wheresmystuff.Controller;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -6,6 +6,8 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
+
+import com.example.seekers.wheresmystuff.R;
 
 /**
  * A controller class that handles when a person would like to view all found items.

@@ -1,12 +1,14 @@
-package com.example.seekers.wheresmystuff;
+package com.example.seekers.wheresmystuff.Controller;
 
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+
+import com.example.seekers.wheresmystuff.Model.User;
+import com.example.seekers.wheresmystuff.R;
 
 /**
  * Class that handles admin start-up screen,

@@ -1,4 +1,4 @@
-package com.example.seekers.wheresmystuff;
+package com.example.seekers.wheresmystuff.Model;
 
 /**
  * Created by Marcus on 6/20/2017.

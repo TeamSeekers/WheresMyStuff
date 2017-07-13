@@ -1,4 +1,4 @@
-package com.example.seekers.wheresmystuff;
+package com.example.seekers.wheresmystuff.Controller;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -6,11 +6,14 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.example.seekers.wheresmystuff.Model.FoundItem;
+import com.example.seekers.wheresmystuff.R;
+
 /**
- * This class represents the controller for the activity when someone
- * would like to submit a lost item claim.
+ * This class represents the controller to handle when someone has
+ * found an item and would like to post it
  */
-public class EnterLostItemActivity extends AppCompatActivity {
+public class EnterFoundItemActivity extends AppCompatActivity {
 
     private EditText enterNameOfItem;
     private EditText enterColorOfItem;
@@ -22,13 +25,13 @@ public class EnterLostItemActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_enter_lost_item);
+        setContentView(R.layout.activity_enter_found_item);
         enterNameOfItem = (EditText) findViewById(R.id.enterNameOfItem);
-        enterColorOfItem = (EditText) findViewById(R.id.enterLostColor);
-        enterDescriptionOfItem = (EditText) findViewById(R.id.enterLostItemDescription);
+        enterColorOfItem = (EditText) findViewById(R.id.enterColor);
+        enterDescriptionOfItem = (EditText) findViewById(R.id.enterFoundItemDescription);
         cancelEnter = (Button) findViewById(R.id.cancelEnterItem);
         enterFoundItem = (Button) findViewById(R.id.enterLostItemButton);
-        enterAddressOfItem = (EditText) findViewById(R.id.enterAddressOfItemLost);
+        enterAddressOfItem = (EditText) findViewById(R.id.enterAddressOfItemFound);
 
         cancelEnter.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -44,9 +47,9 @@ public class EnterLostItemActivity extends AppCompatActivity {
                 String color = enterColorOfItem.getText().toString();
                 String description = enterDescriptionOfItem.getText().toString();
                 String address = enterAddressOfItem.getText().toString();
-                LostItem newLostItem = new LostItem(name, color, description, address);
-                WelcomeScreenActivity.lostItemList.getLostItemList().add(newLostItem);
-                WelcomeScreenActivity.myRef.child("LostItems").child(name + " : " + description).setValue(newLostItem);
+                FoundItem newFoundItem = new FoundItem(name, color, description, address);
+                WelcomeScreenActivity.foundItemList.getFoundItemList().add(newFoundItem);
+                WelcomeScreenActivity.myRef.child("FoundItems").child(name + " : " + description).setValue(newFoundItem);
                 finish();
             }
         });

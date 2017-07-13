@@ -1,4 +1,4 @@
-package com.example.seekers.wheresmystuff;
+package com.example.seekers.wheresmystuff.Controller;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -7,12 +7,15 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.example.seekers.wheresmystuff.Model.FoundItem;
+import com.example.seekers.wheresmystuff.R;
+
 import java.util.ArrayList;
 
 /**
- * A controller class to search through a list of lost items.
+ * A controller class to search through a list of found items.
  */
-public class SearchLostItemsActivity extends AppCompatActivity {
+public class SearchFoundItemsActivity extends AppCompatActivity {
 
     private Button search;
     private Button back;
@@ -20,20 +23,20 @@ public class SearchLostItemsActivity extends AppCompatActivity {
     private EditText color;
     private EditText description;
     private EditText address;
-    public static ArrayList<LostItem> lostSearch;
+    public static ArrayList<FoundItem> foundSearch;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_search_lost_items);
+        setContentView(R.layout.activity_search_found_items);
 
-        search = (Button) findViewById(R.id.searchButtonLost);
-        back = (Button) findViewById(R.id.searchBackButtonLost);
-        name = (EditText) findViewById(R.id.enterNameSearch);
-        color = (EditText) findViewById(R.id.enterColorSearch);
-        description = (EditText) findViewById(R.id.enterDescriptionSearch);
-        address = (EditText) findViewById(R.id.searchEnterAddressLost);
-        lostSearch = new ArrayList<LostItem>();
+        search = (Button) findViewById(R.id.searchButtonFound);
+        back = (Button) findViewById(R.id.searchBackButtonFound);
+        name = (EditText) findViewById(R.id.enterFoundNameSearch);
+        color = (EditText) findViewById(R.id.enterFoundColorSearch);
+        description = (EditText) findViewById(R.id.enterFoundDescriptionSearch);
+        address = (EditText) findViewById(R.id.searchEnterAddressFound);
+        foundSearch = new ArrayList<FoundItem>();
 
         back.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -49,30 +52,30 @@ public class SearchLostItemsActivity extends AppCompatActivity {
                 String itemColor = color.getText().toString();
                 String itemDescription = description.getText().toString();
                 String itemAddress = address.getText().toString();
-                ArrayList<LostItem> temp = WelcomeScreenActivity.lostItemList.getLostItemList();
+                ArrayList<FoundItem> temp = WelcomeScreenActivity.foundItemList.getFoundItemList();
                 for (int i = 0; i < temp.size(); i++) {
                     if (itemName.equals(temp.get(i).getName())) {
-                        if (!lostSearch.contains(temp.get(i))) {
-                            lostSearch.add(temp.get(i));
+                        if (!foundSearch.contains(temp.get(i))) {
+                            foundSearch.add(temp.get(i));
                         }
                     }
                     if (itemColor.equals(temp.get(i).getColor())) {
-                        if (!lostSearch.contains(temp.get(i))) {
-                            lostSearch.add(temp.get(i));
+                        if (!foundSearch.contains(temp.get(i))) {
+                            foundSearch.add(temp.get(i));
                         }
                     }
                     if (itemDescription.equals(temp.get(i).getDescription())) {
-                        if (!lostSearch.contains(temp.get(i))) {
-                            lostSearch.add(temp.get(i));
+                        if (!foundSearch.contains(temp.get(i))) {
+                            foundSearch.add(temp.get(i));
                         }
                     }
                     if (itemAddress.equals(temp.get(i).getAddress())) {
-                        if (!lostSearch.contains(temp.get(i))) {
-                            lostSearch.add(temp.get(i));
+                        if (!foundSearch.contains(temp.get(i))) {
+                            foundSearch.add(temp.get(i));
                         }
                     }
                 }
-                Intent intent = new Intent(SearchLostItemsActivity.this, ViewSearchLostItemsActivity.class);
+                Intent intent = new Intent(SearchFoundItemsActivity.this, ViewSearchFoundItemsActivity.class);
                 startActivity(intent);
             }
         });

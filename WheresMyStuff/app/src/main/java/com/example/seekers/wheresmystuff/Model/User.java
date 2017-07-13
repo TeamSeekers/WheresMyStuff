@@ -1,6 +1,4 @@
-package com.example.seekers.wheresmystuff;
-
-import java.util.ArrayList;
+package com.example.seekers.wheresmystuff.Model;
 
 /**
  * This class represents the User account.
