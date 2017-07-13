@@ -64,10 +64,11 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
     public void addMarker(Item item) throws IOException {
         Geocoder coder = new Geocoder(this);
-        ArrayList<Address> newAddress = (ArrayList<Address>) coder.getFromLocationName(item.getAddress(), 10);
-        for (Address add : newAddress) {
-            double longitude = add.getLongitude();
-            double latitude = add.getLatitude();
+        ArrayList<Address> newAddress = (ArrayList<Address>) coder.getFromLocationName(item.getAddress(), 5);
+        if (newAddress.size() > 0) {
+            Address location = newAddress.get(0);
+            double longitude = location.getLongitude();
+            double latitude = location.getLatitude();
             mMap.addMarker(new MarkerOptions()
                     .position(new LatLng(latitude, longitude))
                     .title(item.getName())
