@@ -86,7 +86,7 @@ public class LoginScreenActivity extends AppCompatActivity {
                     alert11.show();
                 } else if (WelcomeScreenActivity.personList.getPersonList().get(user).isBanned()) {
                     AlertDialog.Builder builder1 = new AlertDialog.Builder(LoginScreenActivity.this);
-                    builder1.setMessage("Account is banned");
+                    builder1.setMessage("Account is banned. Email us at wheresmystuff@gatech.edu for help.");
                     builder1.setCancelable(true);
                     AlertDialog alert11 = builder1.create();
                     alert11.show();
@@ -135,7 +135,7 @@ public class LoginScreenActivity extends AppCompatActivity {
                             }
                         } else {
                             AlertDialog.Builder builder1 = new AlertDialog.Builder(LoginScreenActivity.this);
-                            builder1.setMessage("Account is locked. Email us at wheresmystuff@gatech.edu for help.");
+                            builder1.setMessage("Account is locked.");
                             builder1.setCancelable(true);
                             AlertDialog alert11 = builder1.create();
                             alert11.show();
