@@ -6,7 +6,12 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
+
+import com.example.seekers.wheresmystuff.Model.LostItem;
 import com.example.seekers.wheresmystuff.R;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.ValueEventListener;
 
 /**
  * Controller class for when someone would like to view a list of lost
@@ -27,6 +32,27 @@ public class LostItemsListActivity extends AppCompatActivity {
         adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, WelcomeScreenActivity.lostItemList.getLostItemList());
         itemsList.setAdapter(adapter);
         home = (Button) findViewById(R.id.backToHomeSearch);
+
+        WelcomeScreenActivity.myRef.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                DataSnapshot lostItems = dataSnapshot.child("LostItems");
+                Iterable<DataSnapshot> lostChildren = lostItems.getChildren();
+                for (DataSnapshot lost: lostChildren) {
+                    LostItem l = lost.getValue(LostItem.class);
+                    if (l != null) {
+                        if (!WelcomeScreenActivity.lostItemList.getLostItemList().contains(l)) {
+                            WelcomeScreenActivity.lostItemList.getLostItemList().add(l);
+                        }
+                    }
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
 
         home.setOnClickListener(new View.OnClickListener() {
             @Override

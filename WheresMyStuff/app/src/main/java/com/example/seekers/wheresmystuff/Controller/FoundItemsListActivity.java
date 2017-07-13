@@ -6,7 +6,15 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
+
+import com.example.seekers.wheresmystuff.Model.Admin;
+import com.example.seekers.wheresmystuff.Model.FoundItem;
+import com.example.seekers.wheresmystuff.Model.LostItem;
+import com.example.seekers.wheresmystuff.Model.User;
 import com.example.seekers.wheresmystuff.R;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.ValueEventListener;
 
 /**
  * The controller class that represents when someone needs to view a list
@@ -27,6 +35,27 @@ public class FoundItemsListActivity extends AppCompatActivity {
         adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, WelcomeScreenActivity.foundItemList.getFoundItemList());
         itemsList.setAdapter(adapter);
         home = (Button) findViewById(R.id.backToHomeSearch);
+
+        WelcomeScreenActivity.myRef.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                DataSnapshot foundItems = dataSnapshot.child("FoundItems");
+                Iterable<DataSnapshot> foundChildren = foundItems.getChildren();
+                for (DataSnapshot found: foundChildren) {
+                    FoundItem f = found.getValue(FoundItem.class);
+                    if (f != null) {
+                        if (!WelcomeScreenActivity.foundItemList.getFoundItemList().contains(f)) {
+                            WelcomeScreenActivity.foundItemList.getFoundItemList().add(f);
+                        }
+                    }
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
 
         home.setOnClickListener(new View.OnClickListener() {
             @Override
