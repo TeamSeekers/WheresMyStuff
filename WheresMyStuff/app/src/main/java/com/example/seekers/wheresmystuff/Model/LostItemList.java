@@ -1,7 +1,6 @@
 package com.example.seekers.wheresmystuff.Model;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 
 /**
  * Created by pritshah on 6/22/17.

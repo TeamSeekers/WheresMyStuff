@@ -9,6 +9,9 @@ import android.widget.EditText;
 import com.example.seekers.wheresmystuff.Model.User;
 import com.example.seekers.wheresmystuff.R;
 
+import com.example.seekers.wheresmystuff.Model.User;
+import com.example.seekers.wheresmystuff.R;
+
 /**
  * Class that handles admin start-up screen,
  * allows admin to ban or un-ban a User

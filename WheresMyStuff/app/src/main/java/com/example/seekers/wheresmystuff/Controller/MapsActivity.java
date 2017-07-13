@@ -19,7 +19,6 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import java.io.IOException;
 import java.util.ArrayList;
 
-
 /**
  * Controller class to handle adding markers to map and viewing map
  */

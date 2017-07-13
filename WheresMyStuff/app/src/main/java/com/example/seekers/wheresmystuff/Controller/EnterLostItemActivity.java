@@ -8,6 +8,9 @@ import android.widget.EditText;
 import com.example.seekers.wheresmystuff.Model.LostItem;
 import com.example.seekers.wheresmystuff.R;
 
+import com.example.seekers.wheresmystuff.Model.LostItem;
+import com.example.seekers.wheresmystuff.R;
+
 /**
  * This class represents the controller for the activity when someone
  * would like to submit a lost item claim.

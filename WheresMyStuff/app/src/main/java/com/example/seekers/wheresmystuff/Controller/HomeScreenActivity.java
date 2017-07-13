@@ -7,6 +7,8 @@ import android.view.View;
 import android.widget.Button;
 import com.example.seekers.wheresmystuff.R;
 
+import com.example.seekers.wheresmystuff.R;
+
 /**
  * The controller class that represents the home screen and all the options
  * the application can do.

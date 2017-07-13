@@ -8,6 +8,9 @@ import android.widget.EditText;
 import com.example.seekers.wheresmystuff.Model.FoundItem;
 import com.example.seekers.wheresmystuff.R;
 
+import com.example.seekers.wheresmystuff.Model.FoundItem;
+import com.example.seekers.wheresmystuff.R;
+
 /**
  * This class represents the controller to handle when someone has
  * found an item and would like to post it

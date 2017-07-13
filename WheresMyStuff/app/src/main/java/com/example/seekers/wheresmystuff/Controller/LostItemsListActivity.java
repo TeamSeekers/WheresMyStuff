@@ -8,6 +8,8 @@ import android.widget.Button;
 import android.widget.ListView;
 import com.example.seekers.wheresmystuff.R;
 
+import com.example.seekers.wheresmystuff.R;
+
 /**
  * Controller class for when someone would like to view a list of lost
  * items.
