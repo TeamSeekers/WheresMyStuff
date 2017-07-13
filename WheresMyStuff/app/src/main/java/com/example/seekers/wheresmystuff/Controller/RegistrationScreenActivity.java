@@ -56,6 +56,12 @@ public class RegistrationScreenActivity extends AppCompatActivity {
                     builder1.setCancelable(true);
                     AlertDialog alert11 = builder1.create();
                     alert11.show();
+                }  else if (newUserName.length() == 0) {
+                    AlertDialog.Builder builder1 = new AlertDialog.Builder(RegistrationScreenActivity.this);
+                    builder1.setMessage("Username not entered in.");
+                    builder1.setCancelable(true);
+                    AlertDialog alert11 = builder1.create();
+                    alert11.show();
                 } else if (newPassword.length() < 5) {
                     AlertDialog.Builder builder1 = new AlertDialog.Builder(RegistrationScreenActivity.this);
                     builder1.setMessage("Password length must be greater than 4.");
