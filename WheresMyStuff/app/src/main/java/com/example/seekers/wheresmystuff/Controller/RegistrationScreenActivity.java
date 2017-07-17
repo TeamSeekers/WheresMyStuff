@@ -24,7 +24,6 @@ public class RegistrationScreenActivity extends AppCompatActivity {
     private EditText enterPassword;
     private Button registrationEnter;
     private RadioButton userAccountType;
-    private RadioButton adminAccountType;
     private Button cancel;
     private EditText enterCode;
 
@@ -38,7 +37,6 @@ public class RegistrationScreenActivity extends AppCompatActivity {
         enterPassword = (EditText) findViewById(R.id.enterPassword);
         registrationEnter = (Button) findViewById(R.id.registrationEnter);
         userAccountType = (RadioButton) findViewById(R.id.userAccountType);
-        adminAccountType = (RadioButton) findViewById(R.id.adminAccountType);
         cancel = (Button) findViewById(R.id.registrationCancel);
         enterCode = (EditText) findViewById(R.id.adminCodeInput);
 
@@ -49,6 +47,13 @@ public class RegistrationScreenActivity extends AppCompatActivity {
                 String newUserName = enterUsername.getText().toString();
                 String newPassword = enterPassword.getText().toString();
                 String code = enterCode.getText().toString();
+                String name = enterName.getText().toString();
+
+                if (userAccountType.isChecked()) {
+                    account = "User";
+                } else {
+                    account = "Admin";
+                }
 
                 if (WelcomeScreenActivity.personList.getPersonList().containsKey(newUserName)) {
                     AlertDialog.Builder builder1 = new AlertDialog.Builder(RegistrationScreenActivity.this);
@@ -69,20 +74,15 @@ public class RegistrationScreenActivity extends AppCompatActivity {
                     AlertDialog alert11 = builder1.create();
                     alert11.show();
                 } else {
-                    if (userAccountType.isChecked()) {
-                        account = "User";
-                        User newUser = new User(enterName.getText().toString(),
-                                newUserName, newPassword, account);
-                        WelcomeScreenActivity.myRef.child("Users").child(newUserName).setValue(newUser);
-                        WelcomeScreenActivity.personList.getPersonList().put(newUser.getUsername(), newUser);
+                    if (addUser(name, newUserName, newPassword, account)) {
+                        WelcomeScreenActivity.myRef.child("Users").child(newUserName).setValue(
+                                WelcomeScreenActivity.personList.getPersonList().get(newUserName));
                         showAlert();
                         finish();
                         overridePendingTransition(R.anim.slide_from_left, R.anim.slide_to_right);
                     } else {
                         if (code.equals("cs2340")) {
-                            account = "Admin";
-                            Admin newAdmin = new Admin(enterName.getText().toString(),
-                                    newUserName, newPassword, account);
+                            Admin newAdmin = new Admin(name, newUserName, newPassword, account);
                             WelcomeScreenActivity.myRef.child("Admins").child(newUserName).setValue(newAdmin);
                             WelcomeScreenActivity.personList.getPersonList().put(newAdmin.getUsername(), newAdmin);
                             showAlert();
@@ -107,6 +107,25 @@ public class RegistrationScreenActivity extends AppCompatActivity {
                 overridePendingTransition(R.anim.slide_from_left, R.anim.slide_to_right);
             }
         });
+    }
+
+    /**
+     * Add user to database
+     *
+     * @param name Name of user
+     * @param newUserName Username of user
+     * @param newPassword Password of user
+     * @param account User account type
+     * @return true if user added, false otherwise
+     */
+    public static boolean addUser(String name, String newUserName, String newPassword, String account) {
+        if (account.equals("User")) {
+            User newUser = new User(name, newUserName, newPassword, account);
+            WelcomeScreenActivity.personList.getPersonList().put(newUserName, newUser);
+            return true;
+        } else {
+            return false;
+        }
     }
 
     protected void showAlert() {
