@@ -1,0 +1,28 @@
+Prit Shah
+
+testAddUser() method contract:
+------------------------------
+Operation Signature: + addUser(name: String, newUserName: String, newPassword: String, account: String) : bool
+where addUser is a public static method of the RegistrationScreenActivity class and each of the parameters
+is a String object containing the specified parameters to create a constructor of the User class. Method
+returns true if the new user can be added, false if new user cannot be added
+
+Preconditions:
+- account must be "User"
+- newUserName is not already in database
+- newUserName is greater than a length of 0
+- newPassword is greater than a length of 4
+
+Postconditions:
+- WelcomeScreenActivity.personList contains new User
+- Firebase database contains new User
+- Original contents of database and personList are unchanged
+- New User is added at end of personList
+
+Invariant:
+- account type is "User"
+
+Frame Condition:
+- WelcomeScreenActivity.personList is changed
+- Firebase database is changed
+- Original contents of database and personList are unchanged
