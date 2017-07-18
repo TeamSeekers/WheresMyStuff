@@ -6,7 +6,9 @@ import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import android.util.Log;
 
+import com.example.seekers.wheresmystuff.Model.FoundItem;
 import com.example.seekers.wheresmystuff.Model.Item;
+import com.example.seekers.wheresmystuff.Model.LostItem;
 import com.example.seekers.wheresmystuff.R;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -15,6 +17,9 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.ValueEventListener;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -34,6 +39,33 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
+
+        WelcomeScreenActivity.myRef.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                DataSnapshot lostItems = dataSnapshot.child("LostItems");
+                Iterable<DataSnapshot> lostChildren = lostItems.getChildren();
+                for (DataSnapshot lost: lostChildren) {
+                    LostItem l = lost.getValue(LostItem.class);
+                    if (l != null) {
+                        WelcomeScreenActivity.lostItemList.getLostItemList().add(l);
+                    }
+                }
+                DataSnapshot foundItems = dataSnapshot.child("FoundItems");
+                Iterable<DataSnapshot> foundChildren = foundItems.getChildren();
+                for (DataSnapshot found: foundChildren) {
+                    FoundItem f = found.getValue(FoundItem.class);
+                    if (f != null) {
+                        WelcomeScreenActivity.foundItemList.getFoundItemList().add(f);
+                    }
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
     }
 
 
