@@ -50,14 +50,23 @@ public class EnterLostItemActivity extends AppCompatActivity {
                 String address = enterAddressOfItem.getText().toString();
 
                 if (addLostItem(name, color, description, address)) {
-                    LostItem newLostItem = new LostItem(name, color, description, address);
-                    WelcomeScreenActivity.lostItemList.getLostItemList().add(newLostItem);
-                    WelcomeScreenActivity.myRef.child("LostItems").child(name + " : " + description).setValue(newLostItem);
-                    finish();
-                    overridePendingTransition(R.anim.slide_from_left, R.anim.slide_to_right);
+                    if (description.isEmpty()) {
+                        AlertDialog.Builder builder1 = new AlertDialog.Builder(EnterLostItemActivity.this);
+                        builder1.setMessage("The lost item must also have a description in addition to" +
+                                " its name. Please try again.");
+                        builder1.setCancelable(true);
+                        AlertDialog alert11 = builder1.create();
+                        alert11.show();
+                    } else {
+                        WelcomeScreenActivity.myRef.child("LostItems").child(name + " : " + description).setValue(
+                                WelcomeScreenActivity.lostItemList.getLostItemList().get(
+                                        WelcomeScreenActivity.lostItemList.getLostItemList().size() - 1));
+                        finish();
+                        overridePendingTransition(R.anim.slide_from_left, R.anim.slide_to_right);
+                    }
                 } else {
                     AlertDialog.Builder builder1 = new AlertDialog.Builder(EnterLostItemActivity.this);
-                    builder1.setMessage("The lost item must at least have a name. Try again.");
+                    builder1.setMessage("The lost item must at least have a name. Please try again.");
                     builder1.setCancelable(true);
                     AlertDialog alert11 = builder1.create();
                     alert11.show();
@@ -79,6 +88,8 @@ public class EnterLostItemActivity extends AppCompatActivity {
         if (name.isEmpty()) {
             return false;
         } else {
+            LostItem newLostItem = new LostItem(name, color, description, address);
+            WelcomeScreenActivity.lostItemList.getLostItemList().add(newLostItem);
             return true;
         }
     }
