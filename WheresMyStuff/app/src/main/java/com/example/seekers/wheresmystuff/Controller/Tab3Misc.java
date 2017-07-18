@@ -20,7 +20,7 @@ public class Tab3Misc extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.tab3misc, container, false);
+        View rootView = inflater.inflate(R.layout.activity_tab3misc, container, false);
         map = (Button) rootView.findViewById(R.id.viewMapButton);
 
         map.setOnClickListener(new View.OnClickListener() {

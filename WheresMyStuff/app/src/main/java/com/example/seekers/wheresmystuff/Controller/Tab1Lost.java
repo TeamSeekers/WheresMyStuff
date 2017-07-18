@@ -23,7 +23,7 @@ public class Tab1Lost extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.tab1lost, container, false);
+        View rootView = inflater.inflate(R.layout.activity_tab1lost, container, false);
         lostButton = (Button) rootView.findViewById(R.id.lostButton);
         viewLostItems = (Button) rootView.findViewById(R.id.viewLostItems);
         searchLostItems = (Button) rootView.findViewById(R.id.searchLostItemsButton);

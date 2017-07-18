@@ -22,7 +22,7 @@ public class Tab2Found extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.tab2found, container, false);
+        View rootView = inflater.inflate(R.layout.activity_tab2found, container, false);
         foundButton = (Button) rootView.findViewById(R.id.enterFoundItemsButton);
         viewFoundItems = (Button) rootView.findViewById(R.id.viewFoundItems);
         searchFoundItems = (Button) rootView.findViewById(R.id.searchFoundItemsButton);

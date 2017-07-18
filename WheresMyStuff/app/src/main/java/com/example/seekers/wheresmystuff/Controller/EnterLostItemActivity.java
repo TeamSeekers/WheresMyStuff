@@ -44,25 +44,43 @@ public class EnterLostItemActivity extends AppCompatActivity {
         enterFoundItem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (enterNameOfItem.getText().toString().isEmpty()) {
-                    AlertDialog.Builder builder1 = new AlertDialog.Builder(EnterLostItemActivity.this);
-                    builder1.setMessage("The lost item must at least have a name. Try again.");
-                    builder1.setCancelable(true);
-                    AlertDialog alert11 = builder1.create();
-                    alert11.show();
-                } else {
-                    String name = enterNameOfItem.getText().toString();
-                    String color = enterColorOfItem.getText().toString();
-                    String description = enterDescriptionOfItem.getText().toString();
-                    String address = enterAddressOfItem.getText().toString();
+                String name = enterNameOfItem.getText().toString();
+                String color = enterColorOfItem.getText().toString();
+                String description = enterDescriptionOfItem.getText().toString();
+                String address = enterAddressOfItem.getText().toString();
+
+                if (addLostItem(name, color, description, address)) {
                     LostItem newLostItem = new LostItem(name, color, description, address);
                     WelcomeScreenActivity.lostItemList.getLostItemList().add(newLostItem);
                     WelcomeScreenActivity.myRef.child("LostItems").child(name + " : " + description).setValue(newLostItem);
                     finish();
                     overridePendingTransition(R.anim.slide_from_left, R.anim.slide_to_right);
+                } else {
+                    AlertDialog.Builder builder1 = new AlertDialog.Builder(EnterLostItemActivity.this);
+                    builder1.setMessage("The lost item must at least have a name. Try again.");
+                    builder1.setCancelable(true);
+                    AlertDialog alert11 = builder1.create();
+                    alert11.show();
                 }
             }
         });
+    }
+
+    /**
+     * Add user to database
+     *
+     * @param name Name of item
+     * @param color Color of item
+     * @param description Description of item
+     * @param address Address item was found at
+     * @return true if user added, false otherwise
+     */
+    public static boolean addLostItem(String name, String color, String description, String address) {
+        if (name.isEmpty()) {
+            return false;
+        } else {
+            return true;
+        }
     }
 
     @Override
