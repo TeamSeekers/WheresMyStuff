@@ -1,0 +1,29 @@
+Marcus Jones
+Test searchItem()
+
+Operation signature
+searchItem(name: String, color: String, description: String, address: String): bool
+searchItem is a public static method of the SearchFoundItemsActivity class and all of the parameters
+are String objects contains the data to check if the item being sought is in the list. Method returns
+true if there are any items found. Method returns false if there are no items found.
+
+
+Preconditions
+- account must be "User"
+- newUserName is not already in database
+- newUserName is greater than a length of 0
+- newPassword is greater than a length of 4
+
+Postconditions:
+- WelcomeScreenActivity.personList contains new User
+- Firebase database contains new User
+- Original contents of database and personList are unchanged
+- New User is added at end of personList
+
+Invariant:
+- account type is "User"
+
+Frame Condition:
+- WelcomeScreenActivity.personList is changed
+- Firebase database is changed
+- Original contents of database and personList are unchanged

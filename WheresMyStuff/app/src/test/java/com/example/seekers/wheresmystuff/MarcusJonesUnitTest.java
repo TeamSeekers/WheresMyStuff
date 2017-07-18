@@ -11,17 +11,20 @@ import com.example.seekers.wheresmystuff.Model.FoundItem;
 
 
 import org.junit.Test;
+
+import java.util.ArrayList;
+
 import static org.junit.Assert.*;
 
 public class MarcusJonesUnitTest {
     @Test
     public void testSearchItem() {
         FoundItem item = new FoundItem("Iphone", "Black", "Apple Iphone", "Some Location");
-        FoundItemList list = null;
-        list.getFoundItemList().add(item);
-        assertTrue(SearchFoundItemsActivity.searchItem("Iphone", "Black",
+        ArrayList<FoundItem> list = new FoundItemList().getFoundItemList();
+        list.add(item);
+        assertTrue(SearchFoundItemsActivity.searchItem(list, "Iphone", "Black",
                 "Apple Iphone", "SomeLocation"));
-        assertFalse(SearchFoundItemsActivity.searchItem("Android", "White",
+        assertFalse(SearchFoundItemsActivity.searchItem(list, "Android", "White",
                 "Samsung Android", "AnotherLocation"));
     }
 
