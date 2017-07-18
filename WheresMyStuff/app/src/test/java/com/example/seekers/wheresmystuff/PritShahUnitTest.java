@@ -26,5 +26,7 @@ public class PritShahUnitTest {
         assertFalse(RegistrationScreenActivity.addUser(
                 person2.getName(), person2.getUsername(),
                 person2.getPassword(), person2.getAccountType()));
+        assertEquals(WelcomeScreenActivity.personList.getPersonList().get(person1.getUsername()), person1);
+        assertNull(WelcomeScreenActivity.personList.getPersonList().get(person2.getUsername()));
     }
 }
