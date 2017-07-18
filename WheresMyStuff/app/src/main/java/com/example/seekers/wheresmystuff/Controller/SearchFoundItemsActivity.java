@@ -62,6 +62,15 @@ public class SearchFoundItemsActivity extends AppCompatActivity {
         });
     }
 
+    /**
+     *
+     * @param temp the list of found items that are being searched through
+     * @param name the name of the item being searched
+     * @param color the color of the item being searched
+     * @param description the description of the item being searched
+     * @param address the address/location of the item being searched
+     * @return true if an item is has been found and false if no item was found
+     */
     public static boolean searchItem(ArrayList<FoundItem> temp, String name, String color, String description, String address) {
         for (int i = 0; i < temp.size(); i++) {
             if (name.equals(temp.get(i).getName())) {
