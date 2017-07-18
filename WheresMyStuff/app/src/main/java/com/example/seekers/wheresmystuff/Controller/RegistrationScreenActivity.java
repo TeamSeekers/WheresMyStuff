@@ -128,6 +128,9 @@ public class RegistrationScreenActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * Show successful registration
+     */
     protected void showAlert() {
         AlertDialog.Builder builder1 = new AlertDialog.Builder(RegistrationScreenActivity.this);
         builder1.setMessage("Registration Successful");
