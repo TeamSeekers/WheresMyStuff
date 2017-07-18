@@ -9,21 +9,16 @@ true if there are any items found. Method returns false if there are no items fo
 
 
 Preconditions
-- account must be "User"
-- newUserName is not already in database
-- newUserName is greater than a length of 0
-- newPassword is greater than a length of 4
+- The item must be a valid item
+- There must be a found item list that is not null
 
 Postconditions:
-- WelcomeScreenActivity.personList contains new User
-- Firebase database contains new User
-- Original contents of database and personList are unchanged
-- New User is added at end of personList
+- An item will either be found OR
+- An item will not be found
 
 Invariant:
-- account type is "User"
+- the item description
+- list content
 
-Frame Condition:
-- WelcomeScreenActivity.personList is changed
-- Firebase database is changed
-- Original contents of database and personList are unchanged
+Frame Condition
+- Found Item list is changed
