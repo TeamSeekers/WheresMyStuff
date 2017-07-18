@@ -53,29 +53,7 @@ public class SearchFoundItemsActivity extends AppCompatActivity {
                 String itemColor = color.getText().toString();
                 String itemDescription = description.getText().toString();
                 String itemAddress = address.getText().toString();
-                ArrayList<FoundItem> temp = WelcomeScreenActivity.foundItemList.getFoundItemList();
-                for (int i = 0; i < temp.size(); i++) {
-                    if (itemName.equals(temp.get(i).getName())) {
-                        if (!foundSearch.contains(temp.get(i))) {
-                            foundSearch.add(temp.get(i));
-                        }
-                    }
-                    if (itemColor.equals(temp.get(i).getColor())) {
-                        if (!foundSearch.contains(temp.get(i))) {
-                            foundSearch.add(temp.get(i));
-                        }
-                    }
-                    if (itemDescription.equals(temp.get(i).getDescription())) {
-                        if (!foundSearch.contains(temp.get(i))) {
-                            foundSearch.add(temp.get(i));
-                        }
-                    }
-                    if (itemAddress.equals(temp.get(i).getAddress())) {
-                        if (!foundSearch.contains(temp.get(i))) {
-                            foundSearch.add(temp.get(i));
-                        }
-                    }
-                }
+                searchItem(itemName, itemColor, itemDescription, itemAddress);
                 Intent intent = new Intent(SearchFoundItemsActivity.this, ViewSearchFoundItemsActivity.class);
                 startActivity(intent);
                 overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left);
@@ -83,6 +61,36 @@ public class SearchFoundItemsActivity extends AppCompatActivity {
         });
     }
 
+    public static boolean searchItem(String name, String color, String description, String address) {
+        ArrayList<FoundItem> temp = WelcomeScreenActivity.foundItemList.getFoundItemList();
+        for (int i = 0; i < temp.size(); i++) {
+            if (name.equals(temp.get(i).getName())) {
+                if (!foundSearch.contains(temp.get(i))) {
+                    foundSearch.add(temp.get(i));
+                }
+            }
+            if (color.equals(temp.get(i).getColor())) {
+                if (!foundSearch.contains(temp.get(i))) {
+                    foundSearch.add(temp.get(i));
+                }
+            }
+            if (description.equals(temp.get(i).getDescription())) {
+                if (!foundSearch.contains(temp.get(i))) {
+                    foundSearch.add(temp.get(i));
+                }
+            }
+            if (address.equals(temp.get(i).getAddress())) {
+                if (!foundSearch.contains(temp.get(i))) {
+                    foundSearch.add(temp.get(i));
+                }
+            }
+        }
+        if(foundSearch != null) {
+            return true;
+        } else {
+            return false;
+        }
+    }
     @Override
     public void onBackPressed() {
         super.onBackPressed();
