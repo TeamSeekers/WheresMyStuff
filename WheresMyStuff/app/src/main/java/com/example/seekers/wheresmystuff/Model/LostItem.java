@@ -15,7 +15,8 @@ public class LostItem extends Item {
     }
 
     /**
-     * Constructer for LostItem
+     * Constructor for LostItem
+     *
      * @param name the name of the LostItem
      * @param color the color of the lostItem
      * @param description the description of the LostItem
@@ -28,7 +29,8 @@ public class LostItem extends Item {
     }
 
     /**
-     * getter for name variable
+     * Getter for name variable
+     *
      * @return returns name of item
      */
     public String getName() {
@@ -36,7 +38,8 @@ public class LostItem extends Item {
     }
 
     /**
-     * getter for color variable
+     * Getter for color variable
+     *
      * @return returns the name of the color
      */
     public String getColor() {
@@ -44,7 +47,8 @@ public class LostItem extends Item {
     }
 
     /**
-     * getter for description variable
+     * Getter for description variable
+     *
      * @return the description
      */
     public String getDescription() {
@@ -52,7 +56,8 @@ public class LostItem extends Item {
     }
 
     /**
-     * getter for address variable
+     * Getter for address variable
+     *
      * @return the address
      */
     public String getAddress() {
@@ -60,7 +65,8 @@ public class LostItem extends Item {
     }
 
     /**
-     * overides the tostring method
+     * Overrides the toString method
+     *
      * @return a string that properly describes the item
      */
     public String toString() {

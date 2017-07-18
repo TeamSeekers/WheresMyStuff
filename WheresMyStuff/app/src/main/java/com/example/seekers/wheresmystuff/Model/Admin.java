@@ -39,28 +39,29 @@ public class Admin extends Person {
 
 
     /**
-     * holder method
+     * Holder method
      * @param b true for banned, false for unbanned
      */
     public void setBanned(boolean b) {
     }
 
     /**
-     * add to number of attempts to login
+     * Add to number of attempts to login
      */
     public void addIncorrect() {
         incorrect++;
     }
 
     /**
-     * reset number of attempts to login
+     * Reset number of attempts to login
      */
     public void resetIncorrect() {
         incorrect = 0;
     }
 
     /**
-     * get number incorrect tries
+     * Get number incorrect tries
+     *
      * @return incorrect tries
      */
     public int getIncorrect() {
@@ -104,9 +105,11 @@ public class Admin extends Person {
     }
 
     /**
-     * Overides the default to String method
+     * Overrides the default to String method
+     *
      * @return the String that holds information on the Admin
      */
+    @Override
     public String toString() {
         return "Name: " + this.name + " Account Type: " + this.accountType;
     }

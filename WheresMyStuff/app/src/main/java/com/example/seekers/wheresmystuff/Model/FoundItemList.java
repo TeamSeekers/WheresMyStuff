@@ -13,14 +13,15 @@ public class FoundItemList {
     private ArrayList<FoundItem> foundItemList;
 
     /**
-     * A constructer for the class
+     * A constructor for the class
      */
     public FoundItemList() {
         foundItemList = new ArrayList<FoundItem>();
     }
 
     /**
-     * getter for the foundItemlist
+     * Getter for the foundItemlist
+     *
      * @return the arraylist foundItemList
      */
     public ArrayList<FoundItem> getFoundItemList() {

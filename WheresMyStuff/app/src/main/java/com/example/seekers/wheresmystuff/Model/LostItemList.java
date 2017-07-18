@@ -13,14 +13,15 @@ public class LostItemList {
     private ArrayList<LostItem> lostItemList;
 
     /**
-     * Constructer for LostItemList
+     * Constructor for LostItemList
      */
     public LostItemList() {
         lostItemList = new ArrayList<LostItem>();
     }
 
     /**
-     * getter method for lostItemList
+     * Getter method for lostItemList
+     *
      * @return an arraylist of the lost items.
      */
     public ArrayList<LostItem> getLostItemList() {
