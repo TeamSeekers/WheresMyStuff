@@ -1,0 +1,18 @@
+Hari Tiwari
+
+testIsBanned() Method Contract:
+------------------------------
+Operation Signature: + isBanned() : bool
+where isBanned is a public static method of the User class and each of the parameters. 
+Method returns true if the user is banned, false if the user is not banned. 
+
+Preconditions:
+- A User must exist.
+- the "banned" variable checked by the method must not be null. 
+- the "banned" variable must be a boolean. 
+
+Postconditions:
+- None. Does not affect or change the User.
+
+Invariant:
+- all features of the User. 
