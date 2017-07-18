@@ -6,8 +6,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 
+import com.example.seekers.wheresmystuff.Model.Analytics;
 import com.example.seekers.wheresmystuff.Model.User;
 import com.example.seekers.wheresmystuff.Model.Admin;
 import com.example.seekers.wheresmystuff.Model.FoundItem;
@@ -21,8 +23,8 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.facebook.FacebookSdk;
-import com.facebook.appevents.AppEventsLogger;
+//import com.facebook.FacebookSdk;
+//import com.facebook.appevents.AppEventsLogger;
 /**
  * A controller class that handles when the app is initiated.
  */
@@ -35,6 +37,7 @@ public class WelcomeScreenActivity extends AppCompatActivity {
     public static FoundItemList foundItemList;
     public static FirebaseDatabase database;
     public static DatabaseReference myRef;
+    public static Analytics banner;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +48,7 @@ public class WelcomeScreenActivity extends AppCompatActivity {
         personList = new PersonList();
         lostItemList = new LostItemList();
         foundItemList = new FoundItemList();
+//        banner = (TextView) findViewById(R.id.activity_banner);
         database = FirebaseDatabase.getInstance();
         myRef = database.getReference();
 

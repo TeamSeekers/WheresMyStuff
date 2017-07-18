@@ -1,5 +1,6 @@
 package com.example.seekers.wheresmystuff.Controller;
 
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -43,15 +44,23 @@ public class EnterLostItemActivity extends AppCompatActivity {
         enterFoundItem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String name = enterNameOfItem.getText().toString();
-                String color = enterColorOfItem.getText().toString();
-                String description = enterDescriptionOfItem.getText().toString();
-                String address = enterAddressOfItem.getText().toString();
-                LostItem newLostItem = new LostItem(name, color, description, address);
-                WelcomeScreenActivity.lostItemList.getLostItemList().add(newLostItem);
-                WelcomeScreenActivity.myRef.child("LostItems").child(name + " : " + description).setValue(newLostItem);
-                finish();
-                overridePendingTransition(R.anim.slide_from_left, R.anim.slide_to_right);
+                if (enterNameOfItem.getText().toString().isEmpty()) {
+                    AlertDialog.Builder builder1 = new AlertDialog.Builder(EnterLostItemActivity.this);
+                    builder1.setMessage("The lost item must at least have a name. Try again.");
+                    builder1.setCancelable(true);
+                    AlertDialog alert11 = builder1.create();
+                    alert11.show();
+                } else {
+                    String name = enterNameOfItem.getText().toString();
+                    String color = enterColorOfItem.getText().toString();
+                    String description = enterDescriptionOfItem.getText().toString();
+                    String address = enterAddressOfItem.getText().toString();
+                    LostItem newLostItem = new LostItem(name, color, description, address);
+                    WelcomeScreenActivity.lostItemList.getLostItemList().add(newLostItem);
+                    WelcomeScreenActivity.myRef.child("LostItems").child(name + " : " + description).setValue(newLostItem);
+                    finish();
+                    overridePendingTransition(R.anim.slide_from_left, R.anim.slide_to_right);
+                }
             }
         });
     }
