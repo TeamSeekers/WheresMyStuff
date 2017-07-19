@@ -94,7 +94,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mMap.getUiSettings().setMyLocationButtonEnabled(true);
     }
 
-    public void addMarker(Item item) throws IOException {
+    private void addMarker(Item item) throws IOException {
         Geocoder coder = new Geocoder(this);
         ArrayList<Address> newAddress = (ArrayList<Address>) coder.getFromLocationName(item.getAddress(), 5);
         if (newAddress.size() > 0) {
@@ -108,7 +108,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         }
     }
 
-    public void addAllMarkers() throws IOException {
+    private void addAllMarkers() throws IOException {
         for (int i = 0; i < WelcomeScreenActivity.lostItemList.getLostItemList().size(); i++) {
             if (WelcomeScreenActivity.lostItemList.getLostItemList().get(i).getAddress() != null) {
                 addMarker(WelcomeScreenActivity.lostItemList.getLostItemList().get(i));

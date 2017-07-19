@@ -1,10 +1,6 @@
 package com.example.seekers.wheresmystuff.Model;
 
 /**
- * Created by pritshah on 6/24/17.
- */
-
-/**
  * A class that represents an item that has been found.
  */
 public class FoundItem extends Item {

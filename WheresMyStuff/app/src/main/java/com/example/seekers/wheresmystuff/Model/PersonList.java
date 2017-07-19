@@ -8,13 +8,13 @@ import java.util.HashMap;
  */
 
 public class PersonList {
-    private HashMap<String, Person> personList;
+    private final HashMap<String, Person> personList;
 
     /**
      * Default constructor to initialize the PersonList with an empty HashMap
      */
     public PersonList() {
-        personList = new HashMap<String, Person>();
+        personList = new HashMap<>();
     }
 
     /**

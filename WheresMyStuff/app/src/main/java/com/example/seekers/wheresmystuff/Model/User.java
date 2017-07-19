@@ -39,11 +39,7 @@ public class User extends Person {
      * @return true if account is banned, false otherwise
      */
     public boolean isBanned() {
-        if (banned) {
-            return true;
-        } else {
-            return false;
-        }
+        return banned;
     }
 
     /**
@@ -73,11 +69,7 @@ public class User extends Person {
      * @param b true for banned, false for unbanned
      */
     public void setBanned(boolean b) {
-        if (b) {
-            banned = true;
-        } else {
-            banned = false;
-        }
+        banned = b;
     }
 
     /**

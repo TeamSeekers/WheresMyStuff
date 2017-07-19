@@ -1,12 +1,7 @@
 package com.example.seekers.wheresmystuff;
 
-/**
- * Created by Jordan Hughes on 7/18/2017.
- */
-
 import com.example.seekers.wheresmystuff.Controller.EnterLostItemActivity;
 import com.example.seekers.wheresmystuff.Controller.WelcomeScreenActivity;
-import com.example.seekers.wheresmystuff.Model.Item;
 import com.example.seekers.wheresmystuff.Model.LostItem;
 import com.example.seekers.wheresmystuff.Model.LostItemList;
 
@@ -14,7 +9,6 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
 

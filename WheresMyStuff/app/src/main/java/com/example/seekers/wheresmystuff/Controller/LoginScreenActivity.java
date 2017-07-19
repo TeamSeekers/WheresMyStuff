@@ -8,8 +8,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-import com.example.seekers.wheresmystuff.Model.FoundItem;
-import com.example.seekers.wheresmystuff.Model.LostItem;
 import com.example.seekers.wheresmystuff.Model.User;
 import com.example.seekers.wheresmystuff.Model.Admin;
 
@@ -27,8 +25,6 @@ public class LoginScreenActivity extends AppCompatActivity {
 
     private EditText username;
     private EditText password;
-    private Button enter;
-    private Button cancel;
     private boolean login;
 
     @Override
@@ -38,8 +34,8 @@ public class LoginScreenActivity extends AppCompatActivity {
 
         username = (EditText) findViewById(R.id.username);
         password = (EditText) findViewById(R.id.password);
-        enter = (Button) findViewById(R.id.enterLogin);
-        cancel = (Button) findViewById(R.id.cancelLogin);
+        Button enter = (Button) findViewById(R.id.enterLogin);
+        Button cancel = (Button) findViewById(R.id.cancelLogin);
         login = false;
 
         WelcomeScreenActivity.myRef.addListenerForSingleValueEvent(new ValueEventListener() {

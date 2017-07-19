@@ -3,7 +3,6 @@ package com.example.seekers.wheresmystuff.Model;
 import org.junit.Test;
 
 import static junit.framework.Assert.assertEquals;
-import static org.junit.Assert.assertEquals;
 
 /**
  * Created by Hari Tiwari on 7/18/2017.

@@ -19,8 +19,6 @@ public class EnterLostItemActivity extends AppCompatActivity {
     private EditText enterColorOfItem;
     private EditText enterDescriptionOfItem;
     private EditText enterAddressOfItem;
-    private Button cancelEnter;
-    private Button enterFoundItem;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,8 +27,8 @@ public class EnterLostItemActivity extends AppCompatActivity {
         enterNameOfItem = (EditText) findViewById(R.id.enterNameOfItem);
         enterColorOfItem = (EditText) findViewById(R.id.enterLostColor);
         enterDescriptionOfItem = (EditText) findViewById(R.id.enterLostItemDescription);
-        cancelEnter = (Button) findViewById(R.id.cancelEnterItem);
-        enterFoundItem = (Button) findViewById(R.id.enterLostItemButton);
+        Button cancelEnter = (Button) findViewById(R.id.cancelEnterItem);
+        Button enterFoundItem = (Button) findViewById(R.id.enterLostItemButton);
         enterAddressOfItem = (EditText) findViewById(R.id.enterAddressOfItemLost);
 
         cancelEnter.setOnClickListener(new View.OnClickListener() {

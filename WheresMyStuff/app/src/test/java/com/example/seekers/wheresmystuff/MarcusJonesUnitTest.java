@@ -1,9 +1,5 @@
 package com.example.seekers.wheresmystuff;
 
-/**
- * Created by marcu on 7/18/2017.
- */
-
 import com.example.seekers.wheresmystuff.Controller.SearchFoundItemsActivity;
 
 import com.example.seekers.wheresmystuff.Model.FoundItemList;
@@ -20,11 +16,12 @@ public class MarcusJonesUnitTest {
     @Test
     public void testSearchItem() {
         FoundItem item = new FoundItem("Iphone", "Black", "Apple Iphone", "Some Location");
-        ArrayList<FoundItem> list = new FoundItemList().getFoundItemList();
-        list.add(item);
-        assertTrue(SearchFoundItemsActivity.searchItem(list, "Iphone", "Black",
+        FoundItemList list1 = new FoundItemList();
+        ArrayList<FoundItem> list2 = list1.getFoundItemList();
+        list2.add(item);
+        assertTrue(SearchFoundItemsActivity.searchItem(list2, "Iphone", "Black",
                 "Apple Iphone", "SomeLocation"));
-        assertFalse(SearchFoundItemsActivity.searchItem(list, "Android", "White",
+        assertFalse(SearchFoundItemsActivity.searchItem(list2, "Android", "White",
                 "Samsung Android", "AnotherLocation"));
     }
 

@@ -15,19 +15,15 @@ import com.example.seekers.wheresmystuff.R;
  */
 public class ViewSearchLostItemsActivity extends AppCompatActivity {
 
-    private Button back;
-    private ArrayAdapter adapter;
-    private ListView itemsList;
-
     @Override
     @SuppressWarnings("unchecked")
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_search_lost_items);
 
-        itemsList = (ListView) findViewById(R.id.lostItemsListSearch);
-        back = (Button) findViewById(R.id.backToHomeSearch);
-        adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, SearchLostItemsActivity.lostSearch);
+        ListView itemsList = (ListView) findViewById(R.id.lostItemsListSearch);
+        Button back = (Button) findViewById(R.id.backToHomeSearch);
+        ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, SearchLostItemsActivity.lostSearch);
         itemsList.setAdapter(adapter);
 
         back.setOnClickListener(new View.OnClickListener() {

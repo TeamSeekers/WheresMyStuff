@@ -17,8 +17,6 @@ import java.util.ArrayList;
  */
 public class SearchLostItemsActivity extends AppCompatActivity {
 
-    private Button search;
-    private Button back;
     private EditText name;
     private EditText color;
     private EditText description;
@@ -30,13 +28,13 @@ public class SearchLostItemsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search_lost_items);
 
-        search = (Button) findViewById(R.id.searchButtonLost);
-        back = (Button) findViewById(R.id.searchBackButtonLost);
+        Button search = (Button) findViewById(R.id.searchButtonLost);
+        Button back = (Button) findViewById(R.id.searchBackButtonLost);
         name = (EditText) findViewById(R.id.enterNameSearch);
         color = (EditText) findViewById(R.id.enterColorSearch);
         description = (EditText) findViewById(R.id.enterDescriptionSearch);
         address = (EditText) findViewById(R.id.searchEnterAddressLost);
-        lostSearch = new ArrayList<LostItem>();
+        lostSearch = new ArrayList<>();
 
         back.setOnClickListener(new View.OnClickListener() {
             @Override

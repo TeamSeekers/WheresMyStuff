@@ -17,9 +17,6 @@ public class AdminScreenActivity extends AppCompatActivity {
 
     private EditText banUser;
     private EditText unbanUser;
-    private Button banUserButton;
-    private Button unbanUserButton;
-    private Button logout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,9 +25,9 @@ public class AdminScreenActivity extends AppCompatActivity {
 
         banUser = (EditText) findViewById(R.id.banUserText);
         unbanUser = (EditText) findViewById(R.id.unbanUserText);
-        banUserButton = (Button) findViewById(R.id.banUserButton);
-        unbanUserButton = (Button) findViewById(R.id.unbanUserButton);
-        logout = (Button) findViewById(R.id.adminLogout);
+        Button banUserButton = (Button) findViewById(R.id.banUserButton);
+        Button unbanUserButton = (Button) findViewById(R.id.unbanUserButton);
+        Button logout = (Button) findViewById(R.id.adminLogout);
 
         banUserButton.setOnClickListener(new View.OnClickListener() {
             @Override

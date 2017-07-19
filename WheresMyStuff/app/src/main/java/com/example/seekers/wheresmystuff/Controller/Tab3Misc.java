@@ -15,13 +15,11 @@ import com.example.seekers.wheresmystuff.R;
 
 public class Tab3Misc extends Fragment {
 
-    private Button map;
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.activity_tab3misc, container, false);
-        map = (Button) rootView.findViewById(R.id.viewMapButton);
+        Button map = (Button) rootView.findViewById(R.id.viewMapButton);
 
         map.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -13,28 +13,19 @@ import com.example.seekers.wheresmystuff.R;
  */
 public class HomeScreenActivity extends AppCompatActivity {
 
-    private Button lostButton;
-    private Button viewLostItems;
-    private Button logout;
-    private Button foundButton;
-    private Button viewFoundItems;
-    private Button searchLostItems;
-    private Button searchFoundItems;
-    private Button map;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_screen);
 
-        lostButton = (Button) findViewById(R.id.lostButton);
-        viewLostItems = (Button) findViewById(R.id.viewLostItems);
-        logout = (Button) findViewById(R.id.logout);
-        foundButton = (Button) findViewById(R.id.enterFoundItemsButton);
-        viewFoundItems = (Button) findViewById(R.id.viewFoundItems);
-        searchLostItems = (Button) findViewById(R.id.searchLostItemsButton);
-        searchFoundItems = (Button) findViewById(R.id.searchFoundItemsButton);
-        map = (Button) findViewById(R.id.viewMapButton);
+        Button lostButton = (Button) findViewById(R.id.lostButton);
+        Button viewLostItems = (Button) findViewById(R.id.viewLostItems);
+        Button logout = (Button) findViewById(R.id.logout);
+        Button foundButton = (Button) findViewById(R.id.enterFoundItemsButton);
+        Button viewFoundItems = (Button) findViewById(R.id.viewFoundItems);
+        Button searchLostItems = (Button) findViewById(R.id.searchLostItemsButton);
+        Button searchFoundItems = (Button) findViewById(R.id.searchFoundItemsButton);
+        Button map = (Button) findViewById(R.id.viewMapButton);
 
         map.setOnClickListener(new View.OnClickListener() {
             @Override

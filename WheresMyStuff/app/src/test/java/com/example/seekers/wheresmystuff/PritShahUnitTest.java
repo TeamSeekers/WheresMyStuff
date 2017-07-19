@@ -6,7 +6,6 @@ import com.example.seekers.wheresmystuff.Model.Person;
 import com.example.seekers.wheresmystuff.Model.PersonList;
 import com.example.seekers.wheresmystuff.Model.User;
 
-import org.junit.Assert;
 import org.junit.Test;
 import static org.junit.Assert.*;
 

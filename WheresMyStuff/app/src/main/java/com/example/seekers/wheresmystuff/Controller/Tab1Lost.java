@@ -1,9 +1,5 @@
 package com.example.seekers.wheresmystuff.Controller;
 
-/**
- * Created by Luke on 7/13/2017.
- */
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -16,17 +12,13 @@ import com.example.seekers.wheresmystuff.R;
 
 public class Tab1Lost extends Fragment {
 
-    private Button lostButton;
-    private Button viewLostItems;
-    private Button searchLostItems;
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.activity_tab1lost, container, false);
-        lostButton = (Button) rootView.findViewById(R.id.lostButton);
-        viewLostItems = (Button) rootView.findViewById(R.id.viewLostItems);
-        searchLostItems = (Button) rootView.findViewById(R.id.searchLostItemsButton);
+        Button lostButton = (Button) rootView.findViewById(R.id.lostButton);
+        Button viewLostItems = (Button) rootView.findViewById(R.id.viewLostItems);
+        Button searchLostItems = (Button) rootView.findViewById(R.id.searchLostItemsButton);
 
         searchLostItems.setOnClickListener(new View.OnClickListener() {
             @Override

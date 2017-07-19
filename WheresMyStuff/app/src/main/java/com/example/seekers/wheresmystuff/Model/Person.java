@@ -1,10 +1,6 @@
 package com.example.seekers.wheresmystuff.Model;
 
 /**
- * Created by Marcus on 6/20/2017.
- */
-
-/**
  * A class that represents a person(user or administrator)
  */
 public abstract class Person {

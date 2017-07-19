@@ -19,19 +19,15 @@ import com.google.firebase.database.ValueEventListener;
  */
 public class LostItemsListActivity extends AppCompatActivity {
 
-    private ListView itemsList;
-    private ArrayAdapter adapter;
-    private Button home;
-
     @Override
     @SuppressWarnings("unchecked")
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lost_items_list);
-        itemsList = (ListView) findViewById(R.id.itemsList);
-        adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, WelcomeScreenActivity.lostItemList.getLostItemList());
+        ListView itemsList = (ListView) findViewById(R.id.itemsList);
+        ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, WelcomeScreenActivity.lostItemList.getLostItemList());
         itemsList.setAdapter(adapter);
-        home = (Button) findViewById(R.id.backToHomeSearch);
+        Button home = (Button) findViewById(R.id.backToHomeSearch);
 
         WelcomeScreenActivity.myRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override

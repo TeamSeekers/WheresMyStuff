@@ -15,17 +15,13 @@ import com.example.seekers.wheresmystuff.R;
 
 public class Tab2Found extends Fragment {
 
-    private Button foundButton;
-    private Button viewFoundItems;
-    private Button searchFoundItems;
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.activity_tab2found, container, false);
-        foundButton = (Button) rootView.findViewById(R.id.enterFoundItemsButton);
-        viewFoundItems = (Button) rootView.findViewById(R.id.viewFoundItems);
-        searchFoundItems = (Button) rootView.findViewById(R.id.searchFoundItemsButton);
+        Button foundButton = (Button) rootView.findViewById(R.id.enterFoundItemsButton);
+        Button viewFoundItems = (Button) rootView.findViewById(R.id.viewFoundItems);
+        Button searchFoundItems = (Button) rootView.findViewById(R.id.searchFoundItemsButton);
 
         searchFoundItems.setOnClickListener(new View.OnClickListener() {
             @Override
