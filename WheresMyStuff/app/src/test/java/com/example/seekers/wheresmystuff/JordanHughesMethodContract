@@ -1,0 +1,28 @@
+Jordan Hughes
+
+addLostItem() Method Contract:
+
+----------------------------------------------
+Operation Signature: +addLostItem(name:String, color:String, Description:String, address:String): bool
+where addLostItem is a public static method of the WelcomeScreenActivity class. Each parameter is a string
+object needed to create a constructor for the LostItem class. The method returns true if a LostItem is
+added to the LostItemList, false if it isn't.
+
+Preconditions:
+-
+
+PostConditions:
+-WelcomeScreenActivity.lostItemList contains a new LostItem
+-Original contents of lostItemList is unchanged
+-lostItemList size incremented by one
+-new LostItem added to end of list
+-Firebase database contains new LostItem
+
+Invariant:
+-lostItemList size is >=0
+-
+
+Frame Condition:
+-WelcomeScreenActivity.lostItemList is changed (new item added, size increased)
+-Firebase database is changed
+-original contents of both lostItemList and database are unchanged
