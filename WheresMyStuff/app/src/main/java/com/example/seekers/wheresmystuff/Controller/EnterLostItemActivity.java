@@ -48,20 +48,11 @@ public class EnterLostItemActivity extends AppCompatActivity {
                 String address = enterAddressOfItem.getText().toString();
 
                 if (addLostItem(name, color, description, address)) {
-                    if (description.isEmpty()) {
-                        AlertDialog.Builder builder1 = new AlertDialog.Builder(EnterLostItemActivity.this);
-                        builder1.setMessage("The lost item must also have a description in addition to" +
-                                " its name. Please try again.");
-                        builder1.setCancelable(true);
-                        AlertDialog alert11 = builder1.create();
-                        alert11.show();
-                    } else {
-                        WelcomeScreenActivity.myRef.child("LostItems").child(name + " : " + description).setValue(
-                                WelcomeScreenActivity.lostItemList.getLostItemList().get(
-                                        WelcomeScreenActivity.lostItemList.getLostItemList().size() - 1));
-                        finish();
-                        overridePendingTransition(R.anim.slide_from_left, R.anim.slide_to_right);
-                    }
+                    WelcomeScreenActivity.myRef.child("LostItems").child(name + " : " + description).setValue(
+                            WelcomeScreenActivity.lostItemList.getLostItemList().get(
+                                    WelcomeScreenActivity.lostItemList.getLostItemList().size() - 1));
+                    finish();
+                    overridePendingTransition(R.anim.slide_from_left, R.anim.slide_to_right);
                 } else {
                     AlertDialog.Builder builder1 = new AlertDialog.Builder(EnterLostItemActivity.this);
                     builder1.setMessage("The lost item must at least have a name. Please try again.");
@@ -74,13 +65,13 @@ public class EnterLostItemActivity extends AppCompatActivity {
     }
 
     /**
-     * Add user to database
+     * Add lost item to database
      *
      * @param name Name of item
      * @param color Color of item
      * @param description Description of item
      * @param address Address item was found at
-     * @return true if user added, false otherwise
+     * @return true if item can be added, false otherwise
      */
     public static boolean addLostItem(String name, String color, String description, String address) {
         if (name.isEmpty()) {

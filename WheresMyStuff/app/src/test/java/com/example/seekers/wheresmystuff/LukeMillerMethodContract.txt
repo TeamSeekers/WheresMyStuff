@@ -1,0 +1,28 @@
+Luke Miller
+
+addFoundItem() Method Contract:
+
+----------------------------------------------
+Operation Signature: +addFoundItem(name:String, color:String, Description:String, address:String): bool
+where addFoundItem is a public static method of the EnterFoundItemActivity class. Each parameter is a string
+object needed to create a constructor for the FoundItem class. The method returns true if a FoundItem is
+has a name so that a listing can be created, false if it does not contain a name.
+
+Preconditions:
+-
+
+PostConditions:
+-WelcomeScreenActivity.foundItemList contains a new FoundItem
+-Original contents of foundItemList is unchanged
+-foundItemList size incremented by one
+-new FoundItem added to end of list
+-Firebase database contains new FoundItem
+
+Invariant:
+-foundItemList size is >=0
+-
+
+Frame Condition:
+-WelcomeScreenActivity.foundItemList is changed (new item added, size increased)
+-Firebase database is changed
+-original contents of both foundItemList and database are unchanged
