@@ -52,7 +52,7 @@ public class SearchFoundItemsActivity extends AppCompatActivity {
                 String itemDescription = description.getText().toString();
                 String itemAddress = address.getText().toString();
                 ArrayList<FoundItem> temp = WelcomeScreenActivity.foundItemList.getFoundItemList();
-                searchItem(temp, itemName, itemColor, itemDescription, itemAddress);
+                searchItem(temp, itemName, itemColor, itemDescription, itemAddress, foundSearch);
                 Intent intent = new Intent(SearchFoundItemsActivity.this, ViewSearchFoundItemsActivity.class);
                 startActivity(intent);
                 overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left);
@@ -69,7 +69,8 @@ public class SearchFoundItemsActivity extends AppCompatActivity {
      * @param address the address/location of the item being searched
      * @return true if an item is has been found and false if no item was found
      */
-    public static boolean searchItem(ArrayList<FoundItem> temp, String name, String color, String description, String address) {
+    public static boolean searchItem(ArrayList<FoundItem> temp, String name, String color, String description,
+                                     String address, ArrayList<FoundItem> foundSearch) {
         for (int i = 0; i < temp.size(); i++) {
             if (name.equals(temp.get(i).getName())) {
                 if (!foundSearch.contains(temp.get(i))) {

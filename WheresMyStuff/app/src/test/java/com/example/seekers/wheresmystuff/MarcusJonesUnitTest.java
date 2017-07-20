@@ -16,13 +16,11 @@ public class MarcusJonesUnitTest {
     @Test
     public void testSearchItem() {
         FoundItem item = new FoundItem("Iphone", "Black", "Apple Iphone", "Some Location");
-        FoundItemList list1 = new FoundItemList();
-        ArrayList<FoundItem> list2 = list1.getFoundItemList();
-        list2.add(item);
-        assertTrue(SearchFoundItemsActivity.searchItem(list2, "Iphone", "Black",
-                "Apple Iphone", "SomeLocation"));
-        assertFalse(SearchFoundItemsActivity.searchItem(list2, "Android", "White",
-                "Samsung Android", "AnotherLocation"));
+        FoundItemList list = new FoundItemList();
+        ArrayList<FoundItem> foundSearch = new ArrayList<>();
+        list.getFoundItemList().add(item);
+        assertTrue(SearchFoundItemsActivity.searchItem(list.getFoundItemList(), "Iphone", "Black",
+                "Apple Iphone", "SomeLocation", foundSearch));
     }
 
 
