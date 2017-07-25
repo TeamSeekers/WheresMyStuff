@@ -21,6 +21,10 @@ public class MarcusJonesUnitTest {
         list.getFoundItemList().add(item);
         assertTrue(SearchFoundItemsActivity.searchItem(list.getFoundItemList(), "Iphone", "Black",
                 "Apple Iphone", "SomeLocation", foundSearch));
+        list.getFoundItemList().remove(item);
+        foundSearch = new ArrayList<>();
+        assertFalse(SearchFoundItemsActivity.searchItem(list.getFoundItemList(), "d", "o",
+                "h", "r", foundSearch));
     }
 
 

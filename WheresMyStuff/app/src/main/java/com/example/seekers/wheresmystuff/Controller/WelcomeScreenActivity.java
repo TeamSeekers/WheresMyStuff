@@ -17,13 +17,19 @@ import com.example.seekers.wheresmystuff.Model.LostItem;
 import com.example.seekers.wheresmystuff.Model.LostItemList;
 import com.example.seekers.wheresmystuff.Model.PersonList;
 import com.example.seekers.wheresmystuff.R;
+import com.facebook.CallbackManager;
+import com.facebook.FacebookCallback;
+import com.facebook.FacebookException;
+import com.facebook.login.LoginManager;
+import com.facebook.login.LoginResult;
+import com.facebook.login.widget.LoginButton;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-//import com.facebook.FacebookSdk;
-//import com.facebook.appevents.AppEventsLogger;
+import com.facebook.FacebookSdk;
+import com.facebook.appevents.AppEventsLogger;
 /**
  * A controller class that handles when the app is initiated.
  */
@@ -48,6 +54,28 @@ public class WelcomeScreenActivity extends AppCompatActivity {
 //        banner = (TextView) findViewById(R.id.activity_banner);
         database = FirebaseDatabase.getInstance();
         myRef = database.getReference();
+        LoginButton loginButton = (LoginButton) findViewById(R.id.login_button);
+        loginButton.setReadPermissions("email");
+        CallbackManager callbackManager = CallbackManager.Factory.create();
+        LoginManager.getInstance().registerCallback(callbackManager,
+                new FacebookCallback<LoginResult>() {
+                    @Override
+                    public void onSuccess(LoginResult loginResult) {
+                        Intent intent = new Intent(WelcomeScreenActivity.this, LoginScreenActivity.class);
+                        startActivity(intent);
+                        overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left);
+                    }
+
+                    @Override
+                    public void onCancel() {
+                        // App code
+                    }
+
+                    @Override
+                    public void onError(FacebookException exception) {
+                        // App code
+                    }
+                });
 
         myRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
