@@ -9,6 +9,7 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
 /**
@@ -30,8 +31,9 @@ public class LukeMillerUnitTest {
                     item1.getName(), item1.getColor(),
                     item1.getDescription(), item1.getAddress()));
             WelcomeScreenActivity.lostItemList.getLostItemList().add(item3);
-            WelcomeScreenActivity.lostItemList.getLostItemList().add(item1);
+            WelcomeScreenActivity.lostItemList.getLostItemList().add(item2);
             assertEquals(WelcomeScreenActivity.lostItemList.getLostItemList().get(
-                    WelcomeScreenActivity.lostItemList.getLostItemList().size() - 1), item3);
+                    WelcomeScreenActivity.lostItemList.getLostItemList().size() - 2), item3);
+            assertFalse(WelcomeScreenActivity.lostItemList.getLostItemList().contains(item1));
         }
 }
