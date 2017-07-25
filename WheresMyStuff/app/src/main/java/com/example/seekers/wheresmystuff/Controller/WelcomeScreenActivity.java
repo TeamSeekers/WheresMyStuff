@@ -47,7 +47,7 @@ public class WelcomeScreenActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome_screen);
         Button login = (Button) findViewById(R.id.login);
-        Button registration = (Button) findViewById(R.id.registration);
+        final Button registration = (Button) findViewById(R.id.registration);
         personList = new PersonList();
         lostItemList = new LostItemList();
         foundItemList = new FoundItemList();
@@ -61,10 +61,14 @@ public class WelcomeScreenActivity extends AppCompatActivity {
                 new FacebookCallback<LoginResult>() {
                     @Override
                     public void onSuccess(LoginResult loginResult) {
-                        Intent intent = new Intent(WelcomeScreenActivity.this, LoginScreenActivity.class);
-                        startActivity(intent);
-                        overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left);
-                    }
+                        registration.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                Intent intent = new Intent(WelcomeScreenActivity.this, HomeScreenActivity.class);
+                                startActivity(intent);
+                                overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left);
+                            }
+                        });                    }
 
                     @Override
                     public void onCancel() {
