@@ -2,6 +2,7 @@ package com.example.seekers.wheresmystuff.Controller;
 
 import android.content.Intent;
 
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -54,14 +55,16 @@ public class WelcomeScreenActivity extends AppCompatActivity {
 //        banner = (TextView) findViewById(R.id.activity_banner);
         database = FirebaseDatabase.getInstance();
         myRef = database.getReference();
-        LoginButton loginButton = (LoginButton) findViewById(R.id.login_button);
+
+        
+        final LoginButton loginButton = (LoginButton) findViewById(R.id.login_button);
         loginButton.setReadPermissions("email");
         CallbackManager callbackManager = CallbackManager.Factory.create();
         LoginManager.getInstance().registerCallback(callbackManager,
                 new FacebookCallback<LoginResult>() {
                     @Override
                     public void onSuccess(LoginResult loginResult) {
-                        registration.setOnClickListener(new View.OnClickListener() {
+                        loginButton.setOnClickListener(new View.OnClickListener() {
                             @Override
                             public void onClick(View v) {
                                 Intent intent = new Intent(WelcomeScreenActivity.this, HomeScreenActivity.class);
@@ -72,12 +75,20 @@ public class WelcomeScreenActivity extends AppCompatActivity {
 
                     @Override
                     public void onCancel() {
-                        // App code
+                        AlertDialog.Builder builder1 = new AlertDialog.Builder(WelcomeScreenActivity.this);
+                        builder1.setMessage("Facebook login canceled");
+                        builder1.setCancelable(true);
+                        AlertDialog alert11 = builder1.create();
+                        alert11.show();
                     }
 
                     @Override
                     public void onError(FacebookException exception) {
-                        // App code
+                        AlertDialog.Builder builder1 = new AlertDialog.Builder(WelcomeScreenActivity.this);
+                        builder1.setMessage("Facebook login error");
+                        builder1.setCancelable(true);
+                        AlertDialog alert11 = builder1.create();
+                        alert11.show();
                     }
                 });
 
