@@ -26,7 +26,7 @@
             <StackPanel VerticalAlignment="Top" Grid.Row="0" Orientation="Vertical">
                 <StackPanel Orientation="Horizontal" Margin="5,20,0,0">
                     <Image Source="Assets/windows-sdk.png" Stretch="None"/>
-                    <TextBlock Text="Windows platform sample" Foreground="White" Style="{StaticResource TagLineTextStyle}"/>
+                    <TextBlock Text="WHERE'S MY STUFF?" Foreground="White" Style="{StaticResource TagLineTextStyle}"/>
                 </StackPanel>
                 <TextBlock x:Name="SampleTitle" Foreground="White" Style="{StaticResource SampleHeaderTextStyle}" Margin="30,10,30,0" TextWrapping="Wrap" Text="Sample title here"/>
             </StackPanel>
