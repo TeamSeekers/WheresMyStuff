@@ -48,7 +48,7 @@ namespace UWPApp.Views
         private void PassportSignInButton_Click(object sender, RoutedEventArgs e)
         {
             SignIn();
-            ErrorMessage.Text = "Sign In Failed";
+            ErrorMessage.Text = "";
         }
 
         private void RegisterButtonTextBlock_OnPointerPressed(object sender, PointerRoutedEventArgs e)
@@ -63,7 +63,7 @@ namespace UWPApp.Views
             {
                 //create new local account
                 _user = UserHelper.AddUser(UsernameTextBox.Text);
-                Debug.WriteLine("Successful sign in and create local uiser account");
+                Debug.WriteLine("Successful sign in and create local user account");
                 //login with passport
                 if(await MicrosoftPassportHelper.CreatePassportKeyAsync(UsernameTextBox.Text))
                 {

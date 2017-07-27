@@ -25,6 +25,8 @@ namespace UWPApp.Views
     /// </summary>
     public sealed partial class NewLostItem : Page
     {
+        public static LostItemList lostitems = new LostItemList();
+       
         public NewLostItem()
         {
             this.InitializeComponent();
@@ -42,6 +44,8 @@ namespace UWPApp.Views
             {
                 Debug.WriteLine("Adding New Lost Item");
                 //Add lost item to list
+                LostItem lost = new LostItem(LostItemNameTextBox.Text, Color.Text, Description.Text, Address.Text);
+                lostitems.AddItem(lost);
                 ErrorMessage.Text = "Added New Lost Item";
                 Frame.Navigate(typeof(LostItemHomeScreen));
             }
