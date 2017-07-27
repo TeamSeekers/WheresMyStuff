@@ -18,6 +18,8 @@ import com.example.seekers.wheresmystuff.Model.LostItem;
 import com.example.seekers.wheresmystuff.Model.LostItemList;
 import com.example.seekers.wheresmystuff.Model.PersonList;
 import com.example.seekers.wheresmystuff.R;
+import com.facebook.AccessToken;
+import com.facebook.AccessTokenTracker;
 import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
 import com.facebook.FacebookException;
@@ -42,9 +44,22 @@ public class WelcomeScreenActivity extends AppCompatActivity {
     private static FirebaseDatabase database;
     public static DatabaseReference myRef;
     public static Analytics banner;
+    private boolean success;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        FacebookSdk.sdkInitialize(this.getApplicationContext());
+        AccessTokenTracker accessTokenTracker = new AccessTokenTracker() {
+            @Override
+            protected void onCurrentAccessTokenChanged(
+                    AccessToken oldAccessToken,
+                    AccessToken currentAccessToken) {
+                // Set the access token using
+                // currentAccessToken when it's loaded or set.
+            }
+        };
+        // If the access token is available already assign it.
+        AccessToken accessToken = AccessToken.getCurrentAccessToken();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome_screen);
         Button login = (Button) findViewById(R.id.login);
@@ -60,13 +75,12 @@ public class WelcomeScreenActivity extends AppCompatActivity {
         final LoginButton loginButton = (LoginButton) findViewById(R.id.login_button);
         loginButton.setReadPermissions("email");
         CallbackManager callbackManager = CallbackManager.Factory.create();
+        success = false;
         LoginManager.getInstance().registerCallback(callbackManager,
                 new FacebookCallback<LoginResult>() {
                     @Override
                     public void onSuccess(LoginResult loginResult) {
-                        Intent intent = new Intent(WelcomeScreenActivity.this, HomeScreenActivity.class);
-                        startActivity(intent);
-                        overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left);
+                        success = true;
                     }
 
                     @Override
@@ -83,6 +97,9 @@ public class WelcomeScreenActivity extends AppCompatActivity {
                         alert11.show();
                     }
                 });
+        if (accessToken.getCurrentAccessToken() != null) {
+            startActivity(new Intent(WelcomeScreenActivity.this, HomeScreenActivity.class));
+        }
 
 
 

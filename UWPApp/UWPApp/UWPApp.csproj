@@ -97,6 +97,7 @@
     </Compile>
     <Compile Include="Models\LostItem.cs" />
     <Compile Include="Utils\LostItemList.cs" />
+    <Compile Include="Utils\UserList.cs" />
     <Compile Include="Views\FoundItemHomeScreen.xaml.cs">
       <DependentUpon>FoundItemHomeScreen.xaml</DependentUpon>
     </Compile>

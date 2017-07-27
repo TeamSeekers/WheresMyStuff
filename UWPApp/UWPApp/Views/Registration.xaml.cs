@@ -26,6 +26,7 @@ namespace UWPApp.Views
     public sealed partial class Registration : Page
     {
         private User _user;
+        public static UserList users= new UserList();
         public Registration()
         {
             this.InitializeComponent();
@@ -38,6 +39,7 @@ namespace UWPApp.Views
             if(!string.IsNullOrEmpty(UsernameTextBox.Text))
             {
                 _user = UserHelper.AddUser(UsernameTextBox.Text);
+                users.addUser(_user);
                 await MicrosoftPassportHelper.CreatePassportKeyAsync(_user.Username);
                 Frame.Navigate(typeof(Welcome), _user);
             }

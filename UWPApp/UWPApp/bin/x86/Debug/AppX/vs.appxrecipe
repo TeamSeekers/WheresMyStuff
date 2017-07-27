@@ -31,13 +31,13 @@
     <AppXManifest Include="C:\Users\Jordan Hughes\Desktop\GitHub\WheresMyStuff\UWPApp\UWPApp\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-07-27T21:31:05.665</Modified>
+      <Modified>2017-07-27T22:36:35.792</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\Jordan Hughes\Desktop\GitHub\WheresMyStuff\UWPApp\UWPApp\bin\x86\Debug\UWPApp.exe">
       <PackagePath>entrypoint\UWPApp.exe</PackagePath>
-      <Modified>2017-07-27T21:31:04.364</Modified>
+      <Modified>2017-07-27T22:36:35.430</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Jordan Hughes\.nuget\packages\Microsoft.CSharp\4.0.1\lib\netcore50\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -544,11 +544,11 @@
     <AppxPackagedFile Include="C:\Users\Jordan Hughes\Desktop\GitHub\WheresMyStuff\UWPApp\UWPApp\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-07-27T20:58:26.645</Modified>
+      <Modified>2017-07-27T21:46:47.504</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Jordan Hughes\Desktop\GitHub\WheresMyStuff\UWPApp\UWPApp\bin\x86\Debug\Core\UWPApp.exe">
       <PackagePath>UWPApp.exe</PackagePath>
-      <Modified>2017-07-27T21:31:05.650</Modified>
+      <Modified>2017-07-27T22:36:35.785</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>
