@@ -132,17 +132,23 @@ namespace UWPApp.UWPApp_XamlTypeInfo
 
         private void InitTypeTables()
         {
-            _typeNameTable = new string[4];
-            _typeNameTable[0] = "UWPApp.MainPage";
+            _typeNameTable = new string[7];
+            _typeNameTable[0] = "UWPApp.Views.LostItemHomeScreen";
             _typeNameTable[1] = "Windows.UI.Xaml.Controls.Page";
             _typeNameTable[2] = "Windows.UI.Xaml.Controls.UserControl";
-            _typeNameTable[3] = "UWPApp.Views.Login";
+            _typeNameTable[3] = "UWPApp.MainPage";
+            _typeNameTable[4] = "UWPApp.Views.Login";
+            _typeNameTable[5] = "UWPApp.Views.Registration";
+            _typeNameTable[6] = "UWPApp.Views.Welcome";
 
-            _typeTable = new global::System.Type[4];
-            _typeTable[0] = typeof(global::UWPApp.MainPage);
+            _typeTable = new global::System.Type[7];
+            _typeTable[0] = typeof(global::UWPApp.Views.LostItemHomeScreen);
             _typeTable[1] = typeof(global::Windows.UI.Xaml.Controls.Page);
             _typeTable[2] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
-            _typeTable[3] = typeof(global::UWPApp.Views.Login);
+            _typeTable[3] = typeof(global::UWPApp.MainPage);
+            _typeTable[4] = typeof(global::UWPApp.Views.Login);
+            _typeTable[5] = typeof(global::UWPApp.Views.Registration);
+            _typeTable[6] = typeof(global::UWPApp.Views.Welcome);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -177,8 +183,11 @@ namespace UWPApp.UWPApp_XamlTypeInfo
             return -1;
         }
 
-        private object Activate_0_MainPage() { return new global::UWPApp.MainPage(); }
-        private object Activate_3_Login() { return new global::UWPApp.Views.Login(); }
+        private object Activate_0_LostItemHomeScreen() { return new global::UWPApp.Views.LostItemHomeScreen(); }
+        private object Activate_3_MainPage() { return new global::UWPApp.MainPage(); }
+        private object Activate_4_Login() { return new global::UWPApp.Views.Login(); }
+        private object Activate_5_Registration() { return new global::UWPApp.Views.Registration(); }
+        private object Activate_6_Welcome() { return new global::UWPApp.Views.Welcome(); }
 
         private global::Windows.UI.Xaml.Markup.IXamlType CreateXamlType(int typeIndex)
         {
@@ -190,9 +199,9 @@ namespace UWPApp.UWPApp_XamlTypeInfo
             switch (typeIndex)
             {
 
-            case 0:   //  UWPApp.MainPage
+            case 0:   //  UWPApp.Views.LostItemHomeScreen
                 userType = new global::UWPApp.UWPApp_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_0_MainPage;
+                userType.Activator = Activate_0_LostItemHomeScreen;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
@@ -205,9 +214,30 @@ namespace UWPApp.UWPApp_XamlTypeInfo
                 xamlType = new global::UWPApp.UWPApp_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 3:   //  UWPApp.Views.Login
+            case 3:   //  UWPApp.MainPage
                 userType = new global::UWPApp.UWPApp_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_3_Login;
+                userType.Activator = Activate_3_MainPage;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 4:   //  UWPApp.Views.Login
+                userType = new global::UWPApp.UWPApp_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_4_Login;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 5:   //  UWPApp.Views.Registration
+                userType = new global::UWPApp.UWPApp_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_5_Registration;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 6:   //  UWPApp.Views.Welcome
+                userType = new global::UWPApp.UWPApp_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_6_Welcome;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;

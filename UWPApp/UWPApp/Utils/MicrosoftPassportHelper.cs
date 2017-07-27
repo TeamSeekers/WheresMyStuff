@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Diagnostics;
 using Windows.Security.Credentials;
+using UWPApp.Models;
 
 namespace UWPApp.Utils
 {
@@ -23,7 +24,7 @@ namespace UWPApp.Utils
         }
         public static async Task<bool> CreatePassportKeyAsync(string accountId)
         {
-            KeyCredentialRetrievalResult keyCreationResult = await KeyCredentialManager.RequestCreateAsync(accountID, KeyCredentialCreationOption.ReplaceExisting);
+            KeyCredentialRetrievalResult keyCreationResult = await KeyCredentialManager.RequestCreateAsync(accountId, KeyCredentialCreationOption.ReplaceExisting);
             switch (keyCreationResult.Status)
             {
                 case KeyCredentialStatus.Success:
@@ -41,6 +42,15 @@ namespace UWPApp.Utils
                     break;
             }
             return false;
+        }
+        public static async void RemovePassportAccountAsync(User user)
+        {
+            KeyCredentialRetrievalResult keyOpenResult = await KeyCredentialManager.OpenAsync(user.Username);
+            if(keyOpenResult.Status==KeyCredentialStatus.Success)
+            {
+                //would need to notify a data bawse here to remove the account from a server
+            }
+            await KeyCredentialManager.DeleteAsync(user.Username);
         }
            
     }

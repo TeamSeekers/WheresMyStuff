@@ -9,20 +9,25 @@
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <StackPanel Orientation="Vertical">
-            <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-                <StackPanel Orientation="Vertical">
-                    <TextBlock x:Name="Title" Text="Welcome to Where's My Stuff!" FontSize="20" TextAlignment="Center"/>
-                    <TextBlock x:Name="UserNameText" FontSize="28" TextAlignment="Center" Foreground="Black"/>
+            <TextBlock x:Name="Title" Text="Welcome To" FontSize="40" TextAlignment="Center"/>
+            <TextBlock x:Name="Title2" Text="Where's My Stuff" FontSize="40" TextAlignment="Center"/>
+            <TextBlock x:Name="UserNameText" FontSize="28" TextAlignment="Center" Foreground="Black"/>
 
-                    <TextBlock x:Name="WelcomeLostItemTextBlock" Text="Lost an Item?" FontSize="20" TextAlignment="Center"/>
-                    <Button x:Name="WelcomeLostItemButtom" Content="Go To Lost Items" Click="Button_Welcome_Lost_Click"
+            <TextBlock x:Name="LostItemTextBlock" Text="Lost an Item?" FontSize="20" TextAlignment="Center"/>
+            <Button x:Name="LostItemButton" Content="LOST ITEMS" Click="Button_Lost_Item_Click"
+            HorizontalAlignment="Center" Margin="0,20" Foreground="White" Background="DodgerBlue"/>
+            
+            <TextBlock x:Name="FoudnItemTextBlock" Text="Found an Item?" FontSize="20" TextAlignment="Center"/>
+            <Button x:Name="FoundItemButton" Content="FOUND ITEMS" Click="Button_Found_Item_Click"
             HorizontalAlignment="Center" Margin="0,20" Foreground="White" Background="DodgerBlue"/>
 
-                    <TextBlock x:Name="WelcomeFoundItemTextBlock" Text="Found an item?" FontSize="20" TextAlignment="Center"/>
-                    <Button x:Name="WelcomeFoundItemButton" Content="Go To Found Items" Click="Button_Welcome_Found_Click"
+            <Button x:Name="LogoutButton" Content="Logout" Click="Button_Logout_Click"
             HorizontalAlignment="Center" Margin="0,20" Foreground="White" Background="DodgerBlue"/>
-                </StackPanel>
-            </Grid>
+
+            <Button x:Name="DeleteButton" Content="Delete User" Click="Button_Forget_User_Click"
+            Foreground="White"
+            Background="Gray"
+            HorizontalAlignment="Center"/>
         </StackPanel>
     </Grid>
 </Page>

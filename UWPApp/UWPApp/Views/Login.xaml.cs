@@ -47,13 +47,14 @@ namespace UWPApp.Views
 
         private void PassportSignInButton_Click(object sender, RoutedEventArgs e)
         {
-            ErrorMessage.Text = "";
+            ErrorMessage.Text = " Attempting sign in";
             SignIn();
         }
 
         private void RegisterButtonTextBlock_OnPointerPressed(object sender, PointerRoutedEventArgs e)
         {
             ErrorMessage.Text = "";
+            Frame.Navigate(typeof(Registration));
         }
 
         private async void SignIn()
@@ -67,6 +68,7 @@ namespace UWPApp.Views
                 if(await MicrosoftPassportHelper.CreatePassportKeyAsync(UsernameTextBox.Text))
                 {
                     Debug.WriteLine("Signed in with Microsoft Passport");
+                    Frame.Navigate(typeof(Welcome), _user);
                 }
                 else
                 {

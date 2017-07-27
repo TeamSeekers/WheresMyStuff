@@ -1,3 +1,6 @@
 App.xbf
-MainPage.xbf
 Views\Login.xbf
+Views\LostItemHomeScreen.xbf
+Views\MainPage.xbf
+Views\Registration.xbf
+Views\Welcome.xbf

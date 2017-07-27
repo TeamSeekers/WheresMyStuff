@@ -10,7 +10,7 @@ using UWPApp.Models;
 
 namespace UWPApp.Utils
 {
-    class UserHelper
+    public static class UserHelper
     {
 
 

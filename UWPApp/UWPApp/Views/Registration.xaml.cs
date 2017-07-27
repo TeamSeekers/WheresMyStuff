@@ -12,19 +12,39 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using UWPApp.Models;
+using UWPApp.Utils;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
 namespace UWPApp.Views
 {
+
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class FoundItems : Page
+    public sealed partial class Registration : Page
     {
-        public FoundItems()
+        private User _user;
+        public Registration()
         {
             this.InitializeComponent();
+        }
+
+        private async void RegisterButton_Click_Async(object sender, RoutedEventArgs e)
+        {
+            ErrorMessage.Text = "";
+
+            if(!string.IsNullOrEmpty(UsernameTextBox.Text))
+            {
+                _user = UserHelper.AddUser(UsernameTextBox.Text);
+                await MicrosoftPassportHelper.CreatePassportKeyAsync(_user.Username);
+                Frame.Navigate(typeof(Welcome), _user);
+            }
+            else
+            {
+                ErrorMessage.Text = "Enter a User Name";
+            }
         }
     }
 }

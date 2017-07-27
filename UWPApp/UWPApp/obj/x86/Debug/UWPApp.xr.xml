@@ -12,22 +12,25 @@
       <RootProperty Name="Children" />
     </RootType>
     <RootType FullName="Microsoft.Xaml.DirectUI.ProxyTypes.ThemeResourceExtension" />
-    <RootType FullName="UWPApp.MainPage" />
     <RootType FullName="Windows.UI.Xaml.Controls.StackPanel">
       <RootProperty Name="Orientation" />
       <RootProperty Name="Children" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.TextBlock">
       <RootProperty Name="Text" />
-      <RootProperty Name="FontSize" />
+      <RootProperty Name="FontFamily" />
       <RootProperty Name="Margin" />
       <RootProperty Name="TextAlignment" />
+      <RootProperty Name="HorizontalAlignment" />
+      <RootProperty Name="FontSize" />
       <RootProperty Name="Foreground" />
       <RootProperty Name="TextWrapping" />
       <RootProperty Name="Width" />
       <RootProperty Name="VerticalAlignment" />
       <RootEvent Name="PointerPressed" />
     </RootType>
+    <RootType FullName="UWPApp.Views.LostItemHomeScreen" />
+    <RootType FullName="UWPApp.MainPage" />
     <RootType FullName="Windows.UI.Xaml.Controls.TextBox">
       <RootProperty Name="Margin" />
       <RootProperty Name="Width" />
@@ -48,5 +51,7 @@
       <RootProperty Name="Child" />
     </RootType>
     <RootType FullName="UWPApp.Views.Login" />
+    <RootType FullName="UWPApp.Views.Registration" />
+    <RootType FullName="UWPApp.Views.Welcome" />
   </Roots.RootTypes>
 </Roots>
