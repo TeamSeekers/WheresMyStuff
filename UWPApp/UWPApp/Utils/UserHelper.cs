@@ -7,6 +7,9 @@ using System.IO;
 using System.Xml.Serialization;
 using Windows.Storage;
 using UWPApp.Models;
+using UWPApp.Views;
+using UWPApp.Utils;
+
 
 namespace UWPApp.Utils
 {
@@ -95,11 +98,17 @@ namespace UWPApp.Utils
             {
                 return false;
             }
+            bool has = UserList.Any(User => User.Username == username);
 
-            if(!string.Equals(username, "sampleUsername"))
+            if (has)
             {
-                return false;
+                return true;
             }
+                if (!string.Equals(username, "sampleUsername"))
+                {
+                    return false;
+                }
+  
             return true;
         }
 

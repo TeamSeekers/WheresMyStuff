@@ -1,1 +1,1 @@
-C:\Users\Hari Tiwari\Desktop\Geolocation sample\C#\Windows\GeolocationCS.Windows.csproj;neutral
+C:\Users\Hari Tiwari\Documents\GitHub\WheresMyStuff\UWPApp\UWPApp\GPS App\C#\Windows\GeolocationCS.Windows.csproj;neutral
