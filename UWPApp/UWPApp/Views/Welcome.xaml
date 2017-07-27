@@ -1,0 +1,28 @@
+﻿<Page
+    x:Class="UWPApp.Views.Welcome"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:UWPApp.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <StackPanel Orientation="Vertical">
+            <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+                <StackPanel Orientation="Vertical">
+                    <TextBlock x:Name="Title" Text="Welcome to Where's My Stuff!" FontSize="20" TextAlignment="Center"/>
+                    <TextBlock x:Name="UserNameText" FontSize="28" TextAlignment="Center" Foreground="Black"/>
+
+                    <TextBlock x:Name="WelcomeLostItemTextBlock" Text="Lost an Item?" FontSize="20" TextAlignment="Center"/>
+                    <Button x:Name="WelcomeLostItemButtom" Content="Go To Lost Items" Click="Button_Welcome_Lost_Click"
+            HorizontalAlignment="Center" Margin="0,20" Foreground="White" Background="DodgerBlue"/>
+
+                    <TextBlock x:Name="WelcomeFoundItemTextBlock" Text="Found an item?" FontSize="20" TextAlignment="Center"/>
+                    <Button x:Name="WelcomeFoundItemButton" Content="Go To Found Items" Click="Button_Welcome_Found_Click"
+            HorizontalAlignment="Center" Margin="0,20" Foreground="White" Background="DodgerBlue"/>
+                </StackPanel>
+            </Grid>
+        </StackPanel>
+    </Grid>
+</Page>
