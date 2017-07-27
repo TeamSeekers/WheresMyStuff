@@ -9,6 +9,9 @@ import android.widget.EditText;
 
 import com.example.seekers.wheresmystuff.Model.FoundItem;
 import com.example.seekers.wheresmystuff.R;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
@@ -41,6 +44,27 @@ public class SearchFoundItemsActivity extends AppCompatActivity {
             public void onClick(View v) {
                 finish();
                 overridePendingTransition(R.anim.slide_from_left, R.anim.slide_to_right);
+            }
+        });
+
+        WelcomeScreenActivity.myRef.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                WelcomeScreenActivity.foundItemList.getFoundItemList().clear();
+                DataSnapshot foundItems = dataSnapshot.child("FoundItems");
+                Iterable<DataSnapshot> foundChildren = foundItems.getChildren();
+                for (DataSnapshot found: foundChildren) {
+                    FoundItem f = found.getValue(FoundItem.class);
+                    if (f != null) {
+                        WelcomeScreenActivity.foundItemList.getFoundItemList().add(f);
+
+                    }
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
             }
         });
 

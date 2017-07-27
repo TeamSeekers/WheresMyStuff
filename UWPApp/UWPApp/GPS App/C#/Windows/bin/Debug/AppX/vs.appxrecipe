@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Machine>DESKTOP-7I9S76I</Machine>
+    <WindowsUser>Hari Tiwari</WindowsUser>
+    <TargetPlatformIdentifier>Windows</TargetPlatformIdentifier>
+    <TargetOsVersion>6.3</TargetOsVersion>
+    <TargetOsDescription>Windows 8.1</TargetOsDescription>
+    <SolutionConfiguration>Debug|AnyCPU</SolutionConfiguration>
+    <PackageArchitecture>neutral</PackageArchitecture>
+    <PackageIdentityName>Microsoft.SDKSamples.Geolocation.CS</PackageIdentityName>
+    <PackageIdentityPublisher>CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US</PackageIdentityPublisher>
+    <IntermediateOutputPath>C:\Users\Hari Tiwari\Desktop\Geolocation sample\C#\Windows\obj\Debug\</IntermediateOutputPath>
+    <RemoteDeploymentType>
+    </RemoteDeploymentType>
+    <PackageRegistrationPath>
+    </PackageRegistrationPath>
+    <RemoveNonLayoutFiles>true</RemoveNonLayoutFiles>
+    <RegisteredManifestChecksum>1F09D2FD2E1D93999355E67BAB27DAC6B5598C3C9E0645D4229415F93B7C2023</RegisteredManifestChecksum>
+    <RegisteredPackageMoniker>Microsoft.SDKSamples.Geolocation.CS_1.0.0.0_neutral__8wekyb3d8bbwe</RegisteredPackageMoniker>
+    <RegisteredUserModeAppID>Microsoft.SDKSamples.Geolocation.CS_8wekyb3d8bbwe!GeolocationCS.App</RegisteredUserModeAppID>
+    <RegisteredPackageID>Microsoft.SDKSamples.Geolocation.CS</RegisteredPackageID>
+    <RegisteredPackagePublisher>CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US</RegisteredPackagePublisher>
+    <RegisteredVersion>1.0.0.0</RegisteredVersion>
+    <JitOptimizationSuppressed>True</JitOptimizationSuppressed>
+  </PropertyGroup>
+  <ItemGroup>
+    <AppXManifest Include="C:\Users\Hari Tiwari\Desktop\Geolocation sample\C#\Windows\bin\Debug\AppxManifest.xml">
+      <PackagePath>AppxManifest.xml</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2017-07-27T21:22:39.263</Modified>
+    </AppXManifest>
+  </ItemGroup>
+  <ItemGroup>
+    <AppxPackagedFile Include="C:\Users\Hari Tiwari\Desktop\Geolocation sample\C#\Windows\bin\Debug\GeolocationCS.Windows.exe">
+      <PackagePath>GeolocationCS.Windows.exe</PackagePath>
+      <Modified>2017-07-27T21:22:39.053</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Hari Tiwari\Desktop\Geolocation sample\C#\Shared\Assets\badge-logo.png">
+      <PackagePath>Assets\badge-logo.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2017-07-27T21:09:34.424</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Hari Tiwari\Desktop\Geolocation sample\C#\Shared\Assets\mediumtile-sdk.png">
+      <PackagePath>Assets\mediumtile-sdk.png</PackagePath>
+      <Modified>2017-07-27T21:09:34.426</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Hari Tiwari\Desktop\Geolocation sample\C#\Shared\Assets\microsoft-sdk.png">
+      <PackagePath>Assets\microsoft-sdk.png</PackagePath>
+      <Modified>2017-07-27T21:09:34.436</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Hari Tiwari\Desktop\Geolocation sample\C#\Shared\Assets\smalltile-Phone-sdk.png">
+      <PackagePath>Assets\smalltile-Phone-sdk.png</PackagePath>
+      <Modified>2017-07-27T21:09:34.436</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Hari Tiwari\Desktop\Geolocation sample\C#\Shared\Assets\splash-Phone-sdk.png">
+      <PackagePath>Assets\splash-Phone-sdk.png</PackagePath>
+      <Modified>2017-07-27T21:09:34.446</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Hari Tiwari\Desktop\Geolocation sample\C#\Shared\Assets\windows-sdk.png">
+      <PackagePath>Assets\windows-sdk.png</PackagePath>
+      <Modified>2017-07-27T21:09:34.486</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Hari Tiwari\Desktop\Geolocation sample\C#\Shared\Assets\smalltile-Windows-sdk.png">
+      <PackagePath>Assets\smalltile-Windows-sdk.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2017-07-27T21:09:34.446</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Hari Tiwari\Desktop\Geolocation sample\C#\Shared\Assets\splash-Windows-sdk.png">
+      <PackagePath>Assets\splash-Windows-sdk.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2017-07-27T21:09:34.456</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Hari Tiwari\Desktop\Geolocation sample\C#\Shared\Assets\squaretile-sdk.png">
+      <PackagePath>Assets\squaretile-sdk.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2017-07-27T21:09:34.466</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Hari Tiwari\Desktop\Geolocation sample\C#\Shared\Assets\storelogo-sdk.png">
+      <PackagePath>Assets\storelogo-sdk.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2017-07-27T21:09:34.466</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Hari Tiwari\Desktop\Geolocation sample\C#\Shared\Assets\tile-sdk.png">
+      <PackagePath>Assets\tile-sdk.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2017-07-27T21:09:34.476</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Hari Tiwari\Desktop\Geolocation sample\C#\Windows\bin\Debug\GeolocationCS.Windows.xr.xml">
+      <PackagePath>GeolocationCS.Windows.xr.xml</PackagePath>
+      <Modified>2017-07-27T21:22:38.883</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Hari Tiwari\Desktop\Geolocation sample\C#\Windows\bin\Debug\App.xbf">
+      <PackagePath>App.xbf</PackagePath>
+      <Modified>2017-07-27T21:22:38.933</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Hari Tiwari\Desktop\Geolocation sample\C#\Windows\bin\Debug\Scenario1_TrackPosition.xbf">
+      <PackagePath>Scenario1_TrackPosition.xbf</PackagePath>
+      <Modified>2017-07-27T21:22:38.933</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Hari Tiwari\Desktop\Geolocation sample\C#\Windows\bin\Debug\Scenario2_GetPosition.xbf">
+      <PackagePath>Scenario2_GetPosition.xbf</PackagePath>
+      <Modified>2017-07-27T21:22:38.933</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Hari Tiwari\Desktop\Geolocation sample\C#\Windows\bin\Debug\Scenario3_BackgroundTask.xbf">
+      <PackagePath>Scenario3_BackgroundTask.xbf</PackagePath>
+      <Modified>2017-07-27T21:22:38.933</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Hari Tiwari\Desktop\Geolocation sample\C#\Windows\bin\Debug\Scenario5_GeofenceBackgroundTask.xbf">
+      <PackagePath>Scenario5_GeofenceBackgroundTask.xbf</PackagePath>
+      <Modified>2017-07-27T21:22:38.933</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Hari Tiwari\Desktop\Geolocation sample\C#\Windows\bin\Debug\MainPage.xbf">
+      <PackagePath>MainPage.xbf</PackagePath>
+      <Modified>2017-07-27T21:22:38.933</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Hari Tiwari\Desktop\Geolocation sample\C#\Windows\bin\Debug\Scenario4_ForegroundGeofence.xbf">
+      <PackagePath>Scenario4_ForegroundGeofence.xbf</PackagePath>
+      <Modified>2017-07-27T21:22:38.933</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Hari Tiwari\Desktop\Geolocation sample\C#\Windows\bin\Debug\styles\Styles.xbf">
+      <PackagePath>styles\Styles.xbf</PackagePath>
+      <Modified>2017-07-27T21:22:38.933</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Hari Tiwari\Desktop\Geolocation sample\C#\Windows\bin\Debug\resources.pri">
+      <PackagePath>resources.pri</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2017-07-27T21:22:39.213</Modified>
+    </AppxPackagedFile>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+</Project>

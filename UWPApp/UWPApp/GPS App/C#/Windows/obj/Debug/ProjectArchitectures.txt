@@ -1,0 +1,1 @@
+C:\Users\Hari Tiwari\Desktop\Geolocation sample\C#\Windows\GeolocationCS.Windows.csproj;neutral
