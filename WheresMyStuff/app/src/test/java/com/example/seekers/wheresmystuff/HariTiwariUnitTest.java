@@ -8,7 +8,7 @@ import static org.junit.Assert.assertEquals;
 /**
  * Created by Hari Tiwari on 7/18/2017.
  */
-public class htJUnitTest {
+public class HariTiwariUnitTest {
         @Test
         public void testIsBanned() {
             User PERSONA1 = new User("Hari Tiwari", "testUser", "testing", "User");
