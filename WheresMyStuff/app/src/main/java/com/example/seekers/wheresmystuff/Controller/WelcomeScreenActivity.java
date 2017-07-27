@@ -56,7 +56,7 @@ public class WelcomeScreenActivity extends AppCompatActivity {
         database = FirebaseDatabase.getInstance();
         myRef = database.getReference();
 
-        
+
         final LoginButton loginButton = (LoginButton) findViewById(R.id.login_button);
         loginButton.setReadPermissions("email");
         CallbackManager callbackManager = CallbackManager.Factory.create();
@@ -64,22 +64,14 @@ public class WelcomeScreenActivity extends AppCompatActivity {
                 new FacebookCallback<LoginResult>() {
                     @Override
                     public void onSuccess(LoginResult loginResult) {
-                        loginButton.setOnClickListener(new View.OnClickListener() {
-                            @Override
-                            public void onClick(View v) {
-                                Intent intent = new Intent(WelcomeScreenActivity.this, HomeScreenActivity.class);
-                                startActivity(intent);
-                                overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left);
-                            }
-                        });                    }
+                        Intent intent = new Intent(WelcomeScreenActivity.this, HomeScreenActivity.class);
+                        startActivity(intent);
+                        overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left);
+                    }
 
                     @Override
                     public void onCancel() {
-                        AlertDialog.Builder builder1 = new AlertDialog.Builder(WelcomeScreenActivity.this);
-                        builder1.setMessage("Facebook login canceled");
-                        builder1.setCancelable(true);
-                        AlertDialog alert11 = builder1.create();
-                        alert11.show();
+                        //do nothing just go back to welcome screen
                     }
 
                     @Override
@@ -151,5 +143,16 @@ public class WelcomeScreenActivity extends AppCompatActivity {
                 overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left);
             }
         });
+
+        /*loginButton.setOnClickListener(new View.OnClickListener() {
+          //  @Override
+            //public void onClick(View v) {
+              //  Intent intent = new Intent(WelcomeScreenActivity.this, HomeScreenActivity.class);
+                //startActivity(intent);
+                //overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left);
+            //}
+        //}
+
+        }*/
     }
 }
