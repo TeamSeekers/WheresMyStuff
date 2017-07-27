@@ -1,0 +1,9 @@
+App.xbf
+Views\FoundItemHomeScreen.xbf
+Views\Login.xbf
+Views\LostItemHomeScreen.xbf
+Views\MainPage.xbf
+Views\NewFoundItem.xbf
+Views\NewLostItem.xbf
+Views\Registration.xbf
+Views\Welcome.xbf

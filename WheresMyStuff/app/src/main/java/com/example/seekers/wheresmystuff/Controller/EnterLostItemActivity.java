@@ -19,8 +19,6 @@ public class EnterLostItemActivity extends AppCompatActivity {
     private EditText enterColorOfItem;
     private EditText enterDescriptionOfItem;
     private EditText enterAddressOfItem;
-    private Button cancelEnter;
-    private Button enterFoundItem;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,8 +27,8 @@ public class EnterLostItemActivity extends AppCompatActivity {
         enterNameOfItem = (EditText) findViewById(R.id.enterNameOfItem);
         enterColorOfItem = (EditText) findViewById(R.id.enterLostColor);
         enterDescriptionOfItem = (EditText) findViewById(R.id.enterLostItemDescription);
-        cancelEnter = (Button) findViewById(R.id.cancelEnterItem);
-        enterFoundItem = (Button) findViewById(R.id.enterLostItemButton);
+        Button cancelEnter = (Button) findViewById(R.id.cancelEnterItem);
+        Button enterFoundItem = (Button) findViewById(R.id.enterLostItemButton);
         enterAddressOfItem = (EditText) findViewById(R.id.enterAddressOfItemLost);
 
         cancelEnter.setOnClickListener(new View.OnClickListener() {
@@ -50,14 +48,14 @@ public class EnterLostItemActivity extends AppCompatActivity {
                 String address = enterAddressOfItem.getText().toString();
 
                 if (addLostItem(name, color, description, address)) {
-                    LostItem newLostItem = new LostItem(name, color, description, address);
-                    WelcomeScreenActivity.lostItemList.getLostItemList().add(newLostItem);
-                    WelcomeScreenActivity.myRef.child("LostItems").child(name + " : " + description).setValue(newLostItem);
+                    WelcomeScreenActivity.myRef.child("LostItems").child(name + " : " + description).setValue(
+                            WelcomeScreenActivity.lostItemList.getLostItemList().get(
+                                    WelcomeScreenActivity.lostItemList.getLostItemList().size() - 1));
                     finish();
                     overridePendingTransition(R.anim.slide_from_left, R.anim.slide_to_right);
                 } else {
                     AlertDialog.Builder builder1 = new AlertDialog.Builder(EnterLostItemActivity.this);
-                    builder1.setMessage("The lost item must at least have a name. Try again.");
+                    builder1.setMessage("The lost item must at least have a name. Please try again.");
                     builder1.setCancelable(true);
                     AlertDialog alert11 = builder1.create();
                     alert11.show();
@@ -67,18 +65,20 @@ public class EnterLostItemActivity extends AppCompatActivity {
     }
 
     /**
-     * Add user to database
+     * Add lost item to database
      *
      * @param name Name of item
      * @param color Color of item
      * @param description Description of item
      * @param address Address item was found at
-     * @return true if user added, false otherwise
+     * @return true if item can be added, false otherwise
      */
     public static boolean addLostItem(String name, String color, String description, String address) {
         if (name.isEmpty()) {
             return false;
         } else {
+            LostItem newLostItem = new LostItem(name, color, description, address);
+            WelcomeScreenActivity.lostItemList.getLostItemList().add(newLostItem);
             return true;
         }
     }

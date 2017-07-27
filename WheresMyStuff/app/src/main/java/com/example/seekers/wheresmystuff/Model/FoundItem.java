@@ -1,10 +1,6 @@
 package com.example.seekers.wheresmystuff.Model;
 
 /**
- * Created by pritshah on 6/24/17.
- */
-
-/**
  * A class that represents an item that has been found.
  */
 public class FoundItem extends Item {
@@ -18,7 +14,8 @@ public class FoundItem extends Item {
     }
 
     /**
-     * Constructer for FoundItem
+     * Constructor for FoundItem
+     *
      * @param name the name of the FoundItem
      * @param color the color of the foundItem
      * @param description the description of the FoundItem
@@ -31,7 +28,8 @@ public class FoundItem extends Item {
     }
 
     /**
-     * getter for name variable
+     * Getter for name variable
+     *
      * @return returns name of item
      */
     public String getName() {
@@ -39,7 +37,8 @@ public class FoundItem extends Item {
     }
 
     /**
-     * getter for color variable
+     * Getter for color variable
+     *
      * @return returns the name of the color
      */
     public String getColor() {
@@ -47,7 +46,8 @@ public class FoundItem extends Item {
     }
 
     /**
-     * getter for description variable
+     * Getter for description variable
+     *
      * @return the description
      */
     public String getDescription() {
@@ -55,7 +55,8 @@ public class FoundItem extends Item {
     }
 
     /**
-     * getter for address variable
+     * Getter for address variable
+     *
      * @return the address
      */
     public String getAddress() {
@@ -63,7 +64,8 @@ public class FoundItem extends Item {
     }
 
     /**
-     * overides the tostring method
+     * Overrides the toString method
+     *
      * @return a string that properly describes the item
      */
     public String toString() {

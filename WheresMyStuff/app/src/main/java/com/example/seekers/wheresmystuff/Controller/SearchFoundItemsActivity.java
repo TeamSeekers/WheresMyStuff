@@ -17,8 +17,6 @@ import java.util.ArrayList;
  */
 public class SearchFoundItemsActivity extends AppCompatActivity {
 
-    private Button search;
-    private Button back;
     private EditText name;
     private EditText color;
     private EditText description;
@@ -30,13 +28,13 @@ public class SearchFoundItemsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search_found_items);
 
-        search = (Button) findViewById(R.id.searchButtonFound);
-        back = (Button) findViewById(R.id.searchBackButtonFound);
+        Button search = (Button) findViewById(R.id.searchButtonFound);
+        Button back = (Button) findViewById(R.id.searchBackButtonFound);
         name = (EditText) findViewById(R.id.enterFoundNameSearch);
         color = (EditText) findViewById(R.id.enterFoundColorSearch);
         description = (EditText) findViewById(R.id.enterFoundDescriptionSearch);
         address = (EditText) findViewById(R.id.searchEnterAddressFound);
-        foundSearch = new ArrayList<FoundItem>();
+        foundSearch = new ArrayList<>();
 
         back.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -54,7 +52,7 @@ public class SearchFoundItemsActivity extends AppCompatActivity {
                 String itemDescription = description.getText().toString();
                 String itemAddress = address.getText().toString();
                 ArrayList<FoundItem> temp = WelcomeScreenActivity.foundItemList.getFoundItemList();
-                searchItem(temp, itemName, itemColor, itemDescription, itemAddress);
+                searchItem(temp, itemName, itemColor, itemDescription, itemAddress, foundSearch);
                 Intent intent = new Intent(SearchFoundItemsActivity.this, ViewSearchFoundItemsActivity.class);
                 startActivity(intent);
                 overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left);
@@ -62,7 +60,17 @@ public class SearchFoundItemsActivity extends AppCompatActivity {
         });
     }
 
-    public static boolean searchItem(ArrayList<FoundItem> temp, String name, String color, String description, String address) {
+    /**
+     *
+     * @param temp the list of found items that are being searched through
+     * @param name the name of the item being searched
+     * @param color the color of the item being searched
+     * @param description the description of the item being searched
+     * @param address the address/location of the item being searched
+     * @return true if an item is has been found and false if no item was found
+     */
+    public static boolean searchItem(ArrayList<FoundItem> temp, String name, String color, String description,
+                                     String address, ArrayList<FoundItem> foundSearch) {
         for (int i = 0; i < temp.size(); i++) {
             if (name.equals(temp.get(i).getName())) {
                 if (!foundSearch.contains(temp.get(i))) {
@@ -85,11 +93,7 @@ public class SearchFoundItemsActivity extends AppCompatActivity {
                 }
             }
         }
-        if(foundSearch != null) {
-            return true;
-        } else {
-            return false;
-        }
+        return foundSearch != null;
     }
     @Override
     public void onBackPressed() {

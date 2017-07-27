@@ -11,14 +11,14 @@
         android:id="@+id/lostButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Lost"
+        android:text="@string/lost"
         android:layout_marginTop="100dp" />
 
     <TextView
         android:id="@+id/enterItems"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Enter Lost Items"
+        android:text="@string/enter_lost_items"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:layout_marginTop="70dp" />
 
@@ -26,7 +26,7 @@
         android:id="@+id/viewLostItemsLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="View Lost Items"
+        android:text="@string/view_lost_items"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:layout_marginTop="190dp" />
 
@@ -34,14 +34,14 @@
         android:id="@+id/viewLostItems"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="View Items"
+        android:text="@string/view_items"
         android:layout_marginTop="220dp" />
 
     <TextView
         android:id="@+id/searchLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Search Lost Items"
+        android:text="@string/search_lost_items"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:layout_marginLeft="180dp"
         android:layout_marginTop="70dp" />
@@ -50,7 +50,7 @@
         android:id="@+id/searchLostItemsButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Search"
+        android:text="@string/search"
         android:layout_marginTop="100dp"
         android:layout_marginLeft="200dp" />
 </RelativeLayout>

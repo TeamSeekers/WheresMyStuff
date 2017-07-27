@@ -1,6 +1,5 @@
 package com.example.seekers.wheresmystuff.Controller;
 
-import android.graphics.Color;
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;

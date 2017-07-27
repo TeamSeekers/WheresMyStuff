@@ -1,0 +1,21 @@
+﻿<Page
+    x:Class="UWPApp.Views.LostItemHomeScreen"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:UWPApp.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <StackPanel Orientation="Vertical">
+        <TextBlock x:Name ="Title" Text="Lost Screen" FontSize ="36" Margin ="4" TextAlignment ="Center" VerticalAlignment="Top" />
+        <Button x:Name="PostButton" Content="Post Lost Item" Click="PostButton_Click" HorizontalAlignment="Center" Margin =" 0,20" Foreground ="White" Background="DodgerBlue" />
+         <Button x:Name="SearchButton" Content="Search Found Items" Click="Search_button_Click" HorizontalAlignment="Center" Margin =" 0,20" Foreground ="White" Background="DodgerBlue" />
+           <Button x:Name="CancelButton" Content="Go Back" Click="Cancel_button_Click" HorizontalAlignment="Center" Margin =" 0,20" Foreground ="White" Background="DodgerBlue" />
+         <Button x:Name="LogoutButton" Content="Logout" Click="Button_Logout_Click"
+          HorizontalAlignment="Center" Margin="0,20" Foreground="White" Background="DodgerBlue"/>
+
+        </StackPanel>
+    </Grid>
+</Page>

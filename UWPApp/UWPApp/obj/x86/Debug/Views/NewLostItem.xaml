@@ -1,0 +1,27 @@
+﻿<Page
+    x:Class="UWPApp.Views.NewLostItem"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:UWPApp.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <StackPanel Orientation="Vertical">
+            <TextBlock Text="Post New Lost Item" FontSize="30" Margin="4" TextAlignment="Center"/>
+            <TextBlock Text="Enter Name of Item" FontSize="22" Margin="4" TextAlignment="Center"/>
+            <TextBox x:ConnectionId='1' x:Name="LostItemNameTextBox" Margin="4" Width="250"/>
+            <TextBlock Text="Enter Color of Item" FontSize="22" Margin="4" TextAlignment="Center"/>
+            <TextBox x:ConnectionId='2' x:Name="Color" Margin="4" Width="250"/>
+            <TextBlock Text="Generic Description" FontSize="22" Margin="4" TextAlignment="Center"/>
+            <TextBox x:ConnectionId='3' x:Name="Description" Margin="4" Width="250"/>
+            <TextBlock Text="Address Item Last Seen" FontSize="22" Margin="4" TextAlignment="Center"/>
+            <TextBox x:ConnectionId='4' x:Name="Address" Margin="4" Width="250"/>
+            <Button x:ConnectionId='5' x:Name="PostLostItemButton" Content="Post New Lost Item"                             HorizontalAlignment="Center" Margin =" 0,20" Foreground ="White" Background="DodgerBlue" />
+            <Button x:ConnectionId='6' x:Name="CancelButton" Content="Cancel"                      HorizontalAlignment="Center" Margin =" 0,20" Foreground ="White" Background="DodgerBlue" />
+            <TextBlock x:ConnectionId='7' x:Name="ErrorMessage" Text="" FontSize="20" Margin="4" Foreground="Red" TextAlignment="Center"/>
+        </StackPanel>
+    </Grid>
+</Page>
+

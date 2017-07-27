@@ -1,5 +1,6 @@
 package com.example.seekers.wheresmystuff.Controller;
 
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -18,8 +19,6 @@ public class EnterFoundItemActivity extends AppCompatActivity {
     private EditText enterColorOfItem;
     private EditText enterDescriptionOfItem;
     private EditText enterAddressOfItem;
-    private Button cancelEnter;
-    private Button enterFoundItem;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,8 +27,8 @@ public class EnterFoundItemActivity extends AppCompatActivity {
         enterNameOfItem = (EditText) findViewById(R.id.enterNameOfItem);
         enterColorOfItem = (EditText) findViewById(R.id.enterColor);
         enterDescriptionOfItem = (EditText) findViewById(R.id.enterFoundItemDescription);
-        cancelEnter = (Button) findViewById(R.id.cancelEnterItem);
-        enterFoundItem = (Button) findViewById(R.id.enterLostItemButton);
+        Button cancelEnter = (Button) findViewById(R.id.cancelEnterItem);
+        Button enterFoundItem = (Button) findViewById(R.id.enterLostItemButton);
         enterAddressOfItem = (EditText) findViewById(R.id.enterAddressOfItemFound);
 
         cancelEnter.setOnClickListener(new View.OnClickListener() {
@@ -47,15 +46,41 @@ public class EnterFoundItemActivity extends AppCompatActivity {
                 String color = enterColorOfItem.getText().toString();
                 String description = enterDescriptionOfItem.getText().toString();
                 String address = enterAddressOfItem.getText().toString();
-                FoundItem newFoundItem = new FoundItem(name, color, description, address);
-                WelcomeScreenActivity.foundItemList.getFoundItemList().add(newFoundItem);
-                WelcomeScreenActivity.myRef.child("FoundItems").child(name + " : " + description).setValue(newFoundItem);
-                finish();
-                overridePendingTransition(R.anim.slide_from_left, R.anim.slide_to_right);
+                if (addFoundItem(name, color, description, address)) {
+                    WelcomeScreenActivity.myRef.child("FoundItems").child(name + " : " + description).setValue(
+                            WelcomeScreenActivity.foundItemList.getFoundItemList().get(
+                                    WelcomeScreenActivity.foundItemList.getFoundItemList().size() - 1));
+                    finish();
+                    overridePendingTransition(R.anim.slide_from_left, R.anim.slide_to_right);
+                } else {
+                    AlertDialog.Builder builder1 = new AlertDialog.Builder(EnterFoundItemActivity.this);
+                    builder1.setMessage("The found item must at least have a name. Please try again.");
+                    builder1.setCancelable(true);
+                    AlertDialog alert11 = builder1.create();
+                    alert11.show();
+                }
             }
         });
     }
 
+    /**
+     * Add found item to database
+     *
+     * @param name Name of item
+     * @param color Color of item
+     * @param description Description of item
+     * @param address Address item was found at
+     * @return true if item can be added, false otherwise
+     */
+    public static boolean addFoundItem(String name, String color, String description, String address) {
+        if (name.isEmpty()) {
+            return false;
+        } else {
+            FoundItem newFoundItem = new FoundItem(name, color, description, address);
+            WelcomeScreenActivity.foundItemList.getFoundItemList().add(newFoundItem);
+            return true;
+        }
+    }
     @Override
     public void onBackPressed() {
         super.onBackPressed();

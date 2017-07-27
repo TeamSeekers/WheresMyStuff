@@ -39,29 +39,25 @@ public class User extends Person {
      * @return true if account is banned, false otherwise
      */
     public boolean isBanned() {
-        if (banned) {
-            return true;
-        } else {
-            return false;
-        }
+        return banned;
     }
 
     /**
-     * add to number of attempts to login
+     * Add to number of attempts to login
      */
     public void addIncorrect() {
         incorrect++;
     }
 
     /**
-     * reset number of attempts to login
+     * Reset number of attempts to login
      */
     public void resetIncorrect() {
         incorrect = 0;
     }
 
     /**
-     * get number incorrect tries
+     * Get number incorrect tries
      * @return incorrect tries
      */
     public int getIncorrect() {
@@ -73,11 +69,7 @@ public class User extends Person {
      * @param b true for banned, false for unbanned
      */
     public void setBanned(boolean b) {
-        if (b) {
-            banned = true;
-        } else {
-            banned = false;
-        }
+        banned = b;
     }
 
     /**

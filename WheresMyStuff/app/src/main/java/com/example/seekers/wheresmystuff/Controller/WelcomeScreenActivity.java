@@ -2,11 +2,11 @@ package com.example.seekers.wheresmystuff.Controller;
 
 import android.content.Intent;
 
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
 
 
 import com.example.seekers.wheresmystuff.Model.Analytics;
@@ -18,24 +18,28 @@ import com.example.seekers.wheresmystuff.Model.LostItem;
 import com.example.seekers.wheresmystuff.Model.LostItemList;
 import com.example.seekers.wheresmystuff.Model.PersonList;
 import com.example.seekers.wheresmystuff.R;
+import com.facebook.CallbackManager;
+import com.facebook.FacebookCallback;
+import com.facebook.FacebookException;
+import com.facebook.login.LoginManager;
+import com.facebook.login.LoginResult;
+import com.facebook.login.widget.LoginButton;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-//import com.facebook.FacebookSdk;
-//import com.facebook.appevents.AppEventsLogger;
+import com.facebook.FacebookSdk;
+import com.facebook.appevents.AppEventsLogger;
 /**
  * A controller class that handles when the app is initiated.
  */
 public class WelcomeScreenActivity extends AppCompatActivity {
 
-    private Button login;
-    private Button registration;
     public static PersonList personList;
     public static LostItemList lostItemList;
     public static FoundItemList foundItemList;
-    public static FirebaseDatabase database;
+    private static FirebaseDatabase database;
     public static DatabaseReference myRef;
     public static Analytics banner;
 
@@ -43,14 +47,50 @@ public class WelcomeScreenActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome_screen);
-        login = (Button) findViewById(R.id.login);
-        registration = (Button) findViewById(R.id.registration);
+        Button login = (Button) findViewById(R.id.login);
+        final Button registration = (Button) findViewById(R.id.registration);
         personList = new PersonList();
         lostItemList = new LostItemList();
         foundItemList = new FoundItemList();
 //        banner = (TextView) findViewById(R.id.activity_banner);
         database = FirebaseDatabase.getInstance();
         myRef = database.getReference();
+
+        
+        final LoginButton loginButton = (LoginButton) findViewById(R.id.login_button);
+        loginButton.setReadPermissions("email");
+        CallbackManager callbackManager = CallbackManager.Factory.create();
+        LoginManager.getInstance().registerCallback(callbackManager,
+                new FacebookCallback<LoginResult>() {
+                    @Override
+                    public void onSuccess(LoginResult loginResult) {
+                        loginButton.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                Intent intent = new Intent(WelcomeScreenActivity.this, HomeScreenActivity.class);
+                                startActivity(intent);
+                                overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left);
+                            }
+                        });                    }
+
+                    @Override
+                    public void onCancel() {
+                        AlertDialog.Builder builder1 = new AlertDialog.Builder(WelcomeScreenActivity.this);
+                        builder1.setMessage("Facebook login canceled");
+                        builder1.setCancelable(true);
+                        AlertDialog alert11 = builder1.create();
+                        alert11.show();
+                    }
+
+                    @Override
+                    public void onError(FacebookException exception) {
+                        AlertDialog.Builder builder1 = new AlertDialog.Builder(WelcomeScreenActivity.this);
+                        builder1.setMessage("Facebook login error");
+                        builder1.setCancelable(true);
+                        AlertDialog alert11 = builder1.create();
+                        alert11.show();
+                    }
+                });
 
         myRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override

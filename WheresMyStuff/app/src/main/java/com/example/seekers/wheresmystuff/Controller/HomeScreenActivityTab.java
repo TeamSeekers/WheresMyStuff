@@ -1,6 +1,5 @@
 package com.example.seekers.wheresmystuff.Controller;
 
-import android.content.Intent;
 import android.support.design.widget.TabLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -10,31 +9,12 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
 import com.example.seekers.wheresmystuff.R;
 
 public class HomeScreenActivityTab extends AppCompatActivity {
 
-
-    private Button logout;
-
-    /**
-     * The {@link android.support.v4.view.PagerAdapter} that will provide
-     * fragments for each of the sections. We use a
-     * {@link FragmentPagerAdapter} derivative, which will keep every
-     * loaded fragment in memory. If this becomes too memory intensive, it
-     * may be best to switch to a
-     * {@link android.support.v4.app.FragmentStatePagerAdapter}.
-     */
-    private SectionsPagerAdapter mSectionsPagerAdapter;
-
-    /**
-     * The {@link ViewPager} that will host the section contents.
-     */
-    private ViewPager mViewPager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,16 +22,27 @@ public class HomeScreenActivityTab extends AppCompatActivity {
         setContentView(R.layout.activity_home_screen_tab);
 
 
-        logout = (Button) findViewById(R.id.logout);
+        Button logout = (Button) findViewById(R.id.logout);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         // Create the adapter that will return a fragment for each of the three
         // primary sections of the activity.
-        mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
+        /*
+      The {@link android.support.v4.view.PagerAdapter} that will provide
+      fragments for each of the sections. We use a
+      {@link FragmentPagerAdapter} derivative, which will keep every
+      loaded fragment in memory. If this becomes too memory intensive, it
+      may be best to switch to a
+      {@link android.support.v4.app.FragmentStatePagerAdapter}.
+     */
+        SectionsPagerAdapter mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
 
         // Set up the ViewPager with the sections adapter.
-        mViewPager = (ViewPager) findViewById(R.id.container);
+        /*
+      The {@link ViewPager} that will host the section contents.
+     */
+        ViewPager mViewPager = (ViewPager) findViewById(R.id.container);
         mViewPager.setAdapter(mSectionsPagerAdapter);
 
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
@@ -108,14 +99,11 @@ public class HomeScreenActivityTab extends AppCompatActivity {
         public Fragment getItem(int position) {
             switch (position) {
                 case 0:
-                    Tab1Lost tab1 = new Tab1Lost();
-                    return tab1;
+                    return new Tab1Lost();
                 case 1:
-                    Tab2Found tab2 = new Tab2Found();
-                    return tab2;
+                    return new Tab2Found();
                 case 2:
-                    Tab3Misc tab3 = new Tab3Misc();
-                    return tab3;
+                    return new Tab3Misc();
                 default:
                     return null;
             }

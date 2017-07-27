@@ -22,9 +22,7 @@ public class RegistrationScreenActivity extends AppCompatActivity {
     private EditText enterName;
     private EditText enterUsername;
     private EditText enterPassword;
-    private Button registrationEnter;
     private RadioButton userAccountType;
-    private Button cancel;
     private EditText enterCode;
 
     @Override
@@ -35,9 +33,9 @@ public class RegistrationScreenActivity extends AppCompatActivity {
         enterName = (EditText) findViewById(R.id.enterName);
         enterUsername = (EditText) findViewById(R.id.enterUsername);
         enterPassword = (EditText) findViewById(R.id.enterPassword);
-        registrationEnter = (Button) findViewById(R.id.registrationEnter);
+        Button registrationEnter = (Button) findViewById(R.id.registrationEnter);
         userAccountType = (RadioButton) findViewById(R.id.userAccountType);
-        cancel = (Button) findViewById(R.id.registrationCancel);
+        Button cancel = (Button) findViewById(R.id.registrationCancel);
         enterCode = (EditText) findViewById(R.id.adminCodeInput);
 
         registrationEnter.setOnClickListener(new View.OnClickListener() {
@@ -131,7 +129,7 @@ public class RegistrationScreenActivity extends AppCompatActivity {
     /**
      * Show successful registration
      */
-    protected void showAlert() {
+    private void showAlert() {
         AlertDialog.Builder builder1 = new AlertDialog.Builder(RegistrationScreenActivity.this);
         builder1.setMessage("Registration Successful");
         builder1.setCancelable(true);
