@@ -96,22 +96,22 @@ public class SearchFoundItemsActivity extends AppCompatActivity {
     public static boolean searchItem(ArrayList<FoundItem> temp, String name, String color, String description,
                                      String address, ArrayList<FoundItem> foundSearch) {
         for (int i = 0; i < temp.size(); i++) {
-            if (name.equals(temp.get(i).getName())) {
+            if (name.equals(temp.get(i).getName()) && !name.equals("")) {
                 if (!foundSearch.contains(temp.get(i))) {
                     foundSearch.add(temp.get(i));
                 }
             }
-            if (color.equals(temp.get(i).getColor())) {
+            if (color.equals(temp.get(i).getColor()) && !color.equals("")) {
                 if (!foundSearch.contains(temp.get(i))) {
                     foundSearch.add(temp.get(i));
                 }
             }
-            if (description.equals(temp.get(i).getDescription())) {
+            if (description.equals(temp.get(i).getDescription()) && !description.equals("")) {
                 if (!foundSearch.contains(temp.get(i))) {
                     foundSearch.add(temp.get(i));
                 }
             }
-            if (address.equals(temp.get(i).getAddress())) {
+            if (address.equals(temp.get(i).getAddress()) && !address.equals("")) {
                 if (!foundSearch.contains(temp.get(i))) {
                     foundSearch.add(temp.get(i));
                 }

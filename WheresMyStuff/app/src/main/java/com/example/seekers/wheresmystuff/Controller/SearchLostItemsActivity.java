@@ -76,22 +76,22 @@ public class SearchLostItemsActivity extends AppCompatActivity {
                 String itemAddress = address.getText().toString();
                 ArrayList<LostItem> temp = WelcomeScreenActivity.lostItemList.getLostItemList();
                 for (int i = 0; i < temp.size(); i++) {
-                    if (itemName.equals(temp.get(i).getName())) {
+                    if (itemName.equals(temp.get(i).getName()) && !itemName.equals("")) {
                         if (!lostSearch.contains(temp.get(i))) {
                             lostSearch.add(temp.get(i));
                         }
                     }
-                    if (itemColor.equals(temp.get(i).getColor())) {
+                    if (itemColor.equals(temp.get(i).getColor()) && !itemColor.equals("")) {
                         if (!lostSearch.contains(temp.get(i))) {
                             lostSearch.add(temp.get(i));
                         }
                     }
-                    if (itemDescription.equals(temp.get(i).getDescription())) {
+                    if (itemDescription.equals(temp.get(i).getDescription()) && !itemDescription.equals("")) {
                         if (!lostSearch.contains(temp.get(i))) {
                             lostSearch.add(temp.get(i));
                         }
                     }
-                    if (itemAddress.equals(temp.get(i).getAddress())) {
+                    if (itemAddress.equals(temp.get(i).getAddress()) && !itemAddress.equals("")) {
                         if (!lostSearch.contains(temp.get(i))) {
                             lostSearch.add(temp.get(i));
                         }

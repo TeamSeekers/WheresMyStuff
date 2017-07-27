@@ -84,6 +84,8 @@ public class WelcomeScreenActivity extends AppCompatActivity {
                     }
                 });
 
+
+
         myRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
