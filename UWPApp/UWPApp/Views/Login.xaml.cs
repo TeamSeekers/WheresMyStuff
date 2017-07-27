@@ -47,8 +47,8 @@ namespace UWPApp.Views
 
         private void PassportSignInButton_Click(object sender, RoutedEventArgs e)
         {
-            ErrorMessage.Text = " Attempting sign in";
             SignIn();
+            ErrorMessage.Text = "Sign In Failed";
         }
 
         private void RegisterButtonTextBlock_OnPointerPressed(object sender, PointerRoutedEventArgs e)

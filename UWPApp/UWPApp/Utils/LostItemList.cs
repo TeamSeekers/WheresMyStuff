@@ -11,5 +11,11 @@ namespace UWPApp.Utils
     public class LostItemList
     {
         private List<LostItem> lostItemList;
+
+        public LostItemList()
+        {
+            lostItemList = new List<LostItem>();
+        }
+        
     }
 }
