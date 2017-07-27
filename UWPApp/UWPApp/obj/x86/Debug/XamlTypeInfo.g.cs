@@ -132,23 +132,29 @@ namespace UWPApp.UWPApp_XamlTypeInfo
 
         private void InitTypeTables()
         {
-            _typeNameTable = new string[7];
-            _typeNameTable[0] = "UWPApp.Views.LostItemHomeScreen";
+            _typeNameTable = new string[10];
+            _typeNameTable[0] = "UWPApp.Views.FoundItemHomeScreen";
             _typeNameTable[1] = "Windows.UI.Xaml.Controls.Page";
             _typeNameTable[2] = "Windows.UI.Xaml.Controls.UserControl";
-            _typeNameTable[3] = "UWPApp.MainPage";
-            _typeNameTable[4] = "UWPApp.Views.Login";
-            _typeNameTable[5] = "UWPApp.Views.Registration";
-            _typeNameTable[6] = "UWPApp.Views.Welcome";
+            _typeNameTable[3] = "UWPApp.Views.LostItemHomeScreen";
+            _typeNameTable[4] = "UWPApp.MainPage";
+            _typeNameTable[5] = "UWPApp.Views.Login";
+            _typeNameTable[6] = "UWPApp.Views.NewFoundItem";
+            _typeNameTable[7] = "UWPApp.Views.NewLostItem";
+            _typeNameTable[8] = "UWPApp.Views.Registration";
+            _typeNameTable[9] = "UWPApp.Views.Welcome";
 
-            _typeTable = new global::System.Type[7];
-            _typeTable[0] = typeof(global::UWPApp.Views.LostItemHomeScreen);
+            _typeTable = new global::System.Type[10];
+            _typeTable[0] = typeof(global::UWPApp.Views.FoundItemHomeScreen);
             _typeTable[1] = typeof(global::Windows.UI.Xaml.Controls.Page);
             _typeTable[2] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
-            _typeTable[3] = typeof(global::UWPApp.MainPage);
-            _typeTable[4] = typeof(global::UWPApp.Views.Login);
-            _typeTable[5] = typeof(global::UWPApp.Views.Registration);
-            _typeTable[6] = typeof(global::UWPApp.Views.Welcome);
+            _typeTable[3] = typeof(global::UWPApp.Views.LostItemHomeScreen);
+            _typeTable[4] = typeof(global::UWPApp.MainPage);
+            _typeTable[5] = typeof(global::UWPApp.Views.Login);
+            _typeTable[6] = typeof(global::UWPApp.Views.NewFoundItem);
+            _typeTable[7] = typeof(global::UWPApp.Views.NewLostItem);
+            _typeTable[8] = typeof(global::UWPApp.Views.Registration);
+            _typeTable[9] = typeof(global::UWPApp.Views.Welcome);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -183,11 +189,14 @@ namespace UWPApp.UWPApp_XamlTypeInfo
             return -1;
         }
 
-        private object Activate_0_LostItemHomeScreen() { return new global::UWPApp.Views.LostItemHomeScreen(); }
-        private object Activate_3_MainPage() { return new global::UWPApp.MainPage(); }
-        private object Activate_4_Login() { return new global::UWPApp.Views.Login(); }
-        private object Activate_5_Registration() { return new global::UWPApp.Views.Registration(); }
-        private object Activate_6_Welcome() { return new global::UWPApp.Views.Welcome(); }
+        private object Activate_0_FoundItemHomeScreen() { return new global::UWPApp.Views.FoundItemHomeScreen(); }
+        private object Activate_3_LostItemHomeScreen() { return new global::UWPApp.Views.LostItemHomeScreen(); }
+        private object Activate_4_MainPage() { return new global::UWPApp.MainPage(); }
+        private object Activate_5_Login() { return new global::UWPApp.Views.Login(); }
+        private object Activate_6_NewFoundItem() { return new global::UWPApp.Views.NewFoundItem(); }
+        private object Activate_7_NewLostItem() { return new global::UWPApp.Views.NewLostItem(); }
+        private object Activate_8_Registration() { return new global::UWPApp.Views.Registration(); }
+        private object Activate_9_Welcome() { return new global::UWPApp.Views.Welcome(); }
 
         private global::Windows.UI.Xaml.Markup.IXamlType CreateXamlType(int typeIndex)
         {
@@ -199,9 +208,9 @@ namespace UWPApp.UWPApp_XamlTypeInfo
             switch (typeIndex)
             {
 
-            case 0:   //  UWPApp.Views.LostItemHomeScreen
+            case 0:   //  UWPApp.Views.FoundItemHomeScreen
                 userType = new global::UWPApp.UWPApp_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_0_LostItemHomeScreen;
+                userType.Activator = Activate_0_FoundItemHomeScreen;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
@@ -214,30 +223,51 @@ namespace UWPApp.UWPApp_XamlTypeInfo
                 xamlType = new global::UWPApp.UWPApp_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 3:   //  UWPApp.MainPage
+            case 3:   //  UWPApp.Views.LostItemHomeScreen
                 userType = new global::UWPApp.UWPApp_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_3_MainPage;
+                userType.Activator = Activate_3_LostItemHomeScreen;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 4:   //  UWPApp.Views.Login
+            case 4:   //  UWPApp.MainPage
                 userType = new global::UWPApp.UWPApp_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_4_Login;
+                userType.Activator = Activate_4_MainPage;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 5:   //  UWPApp.Views.Registration
+            case 5:   //  UWPApp.Views.Login
                 userType = new global::UWPApp.UWPApp_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_5_Registration;
+                userType.Activator = Activate_5_Login;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 6:   //  UWPApp.Views.Welcome
+            case 6:   //  UWPApp.Views.NewFoundItem
                 userType = new global::UWPApp.UWPApp_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_6_Welcome;
+                userType.Activator = Activate_6_NewFoundItem;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 7:   //  UWPApp.Views.NewLostItem
+                userType = new global::UWPApp.UWPApp_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_7_NewLostItem;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 8:   //  UWPApp.Views.Registration
+                userType = new global::UWPApp.UWPApp_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_8_Registration;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 9:   //  UWPApp.Views.Welcome
+                userType = new global::UWPApp.UWPApp_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_9_Welcome;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;

@@ -8,6 +8,14 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <StackPanel Orientation="Vertical">
+        <TextBlock x:Name ="Title" Text="Lost Screen" FontSize ="36" Margin ="4" TextAlignment ="Center" VerticalAlignment="Top" />
+        <Button x:Name="PostButton" Content="Post Lost Item" Click="PostButton_Click" HorizontalAlignment="Center" Margin =" 0,20" Foreground ="White" Background="DodgerBlue" />
+         <Button x:Name="SearchButton" Content="Search Found Items" Click="Search_button_Click" HorizontalAlignment="Center" Margin =" 0,20" Foreground ="White" Background="DodgerBlue" />
+           <Button x:Name="CancelButton" Content="Go Back" Click="Cancel_button_Click" HorizontalAlignment="Center" Margin =" 0,20" Foreground ="White" Background="DodgerBlue" />
+         <Button x:Name="LogoutButton" Content="Logout" Click="Button_Logout_Click"
+          HorizontalAlignment="Center" Margin="0,20" Foreground="White" Background="DodgerBlue"/>
 
+        </StackPanel>
     </Grid>
 </Page>

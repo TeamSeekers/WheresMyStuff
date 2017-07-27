@@ -13,6 +13,8 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using System.Diagnostics;
+using UWPApp.Models;
+using UWPApp.Utils;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -21,34 +23,32 @@ namespace UWPApp.Views
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class FoundItemHomeScreen : Page
+    public sealed partial class NewLostItem : Page
     {
-        public FoundItemHomeScreen()
+        public NewLostItem()
         {
             this.InitializeComponent();
         }
 
-        private void PostButton_Click(object sender, RoutedEventArgs e)
+        private void Cancel_Click(object sender, RoutedEventArgs e)
         {
-            Debug.WriteLine("Going to Create New Item Screen");
-            Frame.Navigate(typeof(NewFoundItem));
+            Debug.WriteLine("Canceling new lost item post");
+            Frame.Navigate(typeof(LostItemHomeScreen));
         }
 
-        private void Search_button_Click(object sender, RoutedEventArgs e)
+        private void Post_New_Lost_Click(object sender, RoutedEventArgs e)
         {
-
-        }
-
-        private void Button_Logout_Click(object sender, RoutedEventArgs e)
-        {
-            Debug.WriteLine("Logging out");
-            Frame.Navigate(typeof(Login));
-        }
-
-        private void Cancel_button_Click(object sender, RoutedEventArgs e)
-        {
-            Debug.WriteLine("Returning to Welcome Screen");
-            Frame.Navigate(typeof(Welcome));
+            if(!string.IsNullOrEmpty(LostItemNameTextBox.Text))
+            {
+                Debug.WriteLine("Adding New Lost Item");
+                //Add lost item to list
+                ErrorMessage.Text = "Added New Lost Item";
+                Frame.Navigate(typeof(LostItemHomeScreen));
+            }
+            else
+            {
+                ErrorMessage.Text = "Enter Name of item";
+            }
         }
     }
 }

@@ -12,6 +12,7 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using System.Diagnostics;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -29,7 +30,26 @@ namespace UWPApp.Views
 
         private void PostButton_Click(object sender, RoutedEventArgs e)
         {
+            Debug.WriteLine("Going to Create New Item Screen");
+            Frame.Navigate(typeof(NewLostItem));
 
+        }
+
+        private void Search_button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Button_Logout_Click(object sender, RoutedEventArgs e)
+        {
+            Debug.WriteLine("Logging out");
+            Frame.Navigate(typeof(Login));
+        }
+
+        private void Cancel_button_Click(object sender, RoutedEventArgs e)
+        {
+            Debug.WriteLine("Returning to welcome screen");
+            Frame.Navigate(typeof(Welcome));
         }
     }
 }

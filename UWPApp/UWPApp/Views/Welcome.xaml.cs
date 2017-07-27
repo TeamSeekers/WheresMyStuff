@@ -59,7 +59,8 @@ namespace UWPApp.Views
 
         private void Button_Found_Item_Click(object sender, RoutedEventArgs e)
         {
-
+            Debug.WriteLine("Going to found Items screen");
+            Frame.Navigate(typeof(FoundItemHomeScreen));
         }
     }
 }
